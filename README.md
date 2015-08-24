@@ -63,45 +63,45 @@ letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "hlafqahlafq" "lwkuublwkuu" "yyymtcyyymt" "dmdlpddmdlp" "nbracenbrac"
-#>  [6] "nvzuxfnvzux" "fkmfagfkmfa" "vpfzghvpfzg" "foxwcifoxwc" "cdhumjcdhum"
-#> [11] "qsdbnkqsdbn" "yxyunlyxyun" "vlctcmvlctc" "wxfvunwxfvu" "lntszolntsz"
-#> [16] "mmnripmmnri" "cidpjqcidpj" "mzddwrmzddw" "eroftseroft" "kmmsatkmmsa"
-#> [21] "iynkkuiynkk" "jfknkvjfknk" "gienpwgienp" "kwrbxxkwrbx" "sttapysttap"
-#> [26] "taxlgztaxlg"
+#>  [1] "droddadrodd" "ftpfnbftpfn" "sccwqcsccwq" "kqxwhdkqxwh" "humbwehumbw"
+#>  [6] "ogpvkfogpvk" "clhzhgclhzh" "waswzhwaswz" "tojmditojmd" "dscrfjdscrf"
+#> [11] "bdngdkbdngd" "kupmzlkupmz" "gpwzsmgpwzs" "xfjfxnxfjfx" "xpwwzoxpwwz"
+#> [16] "klxnipklxni" "lbhqcqlbhqc" "smsqkrsmsqk" "gmwlysgmwly" "cwvnjtcwvnj"
+#> [21] "pbybpupbybp" "rztuivrztui" "fkhkpwfkhkp" "xvxwnxxvxwn" "jrpikyjrpik"
+#> [26] "dmbclzdmbcl"
 letters %>% salt %>% anonymize
-#>  [1] "bafc44d4a9f5e561a4344234a1d6af01ff95bc9ef0265add584dcab6255ab150"
-#>  [2] "1dbfa61db6e20ea8e8ac0340995a8a3f5505147b632edf5d32f2a192b0978028"
-#>  [3] "b527c9e2ad741de66eb34a1ab1a2df5d1d7e516c8d7a545b4bcb92d83bf6cc8c"
-#>  [4] "c80df52170d14d825e33e4735f8841c037be8285bc513701f9fcceb04ddddd35"
-#>  [5] "02836af8e0fc29ae0a7cd56dbd80df9ce8a38934d887cf82e8fb5592696ba559"
-#>  [6] "81345775b0859965e729aed9de20d13bdd5b5400955e2772146ec027aca49f1d"
-#>  [7] "bb459b25b8809627da9d89d32031a3e83f4f767fc47a92a6a4108e04bf86cc16"
-#>  [8] "188f81c391cbb6d51909498e1b6fe6a3c5783da7cbacf17f73daa924e30e922a"
-#>  [9] "e38c4d18c69a86e5ae0a7fe0af93d9bcbf5221a74eee399118f1b44423c5e944"
-#> [10] "7d26b1b2bec257033c0ba07b73d435f237639bf45d49890b8bf04ecd2c2153a7"
-#> [11] "74f91231fad85303298e139ad062ea800be5d816139161c01bca6b4d11885c7c"
-#> [12] "fc9471c0ec48d577d04b4947f37901b42ff51f037aaeeccd8e33d10261495f14"
-#> [13] "8c3f0e99280c42cc38e76149ec99325f352658316441f73c519cecba081533c8"
-#> [14] "20717ecad2bc1b72e9e7925cbc403da448df09dfbe0f73b71ad9245e1f13be0e"
-#> [15] "12c8fb5919deee93a3215ad69613f8934f7b8606e3568bb5e28d7003e30ccd1b"
-#> [16] "da45b8bc57258eb14eb05431ba26825132f8253af3f9fb83336075f8ae36b8d6"
-#> [17] "721c70ab03485fe692f45e0f241a27c0c64af261682bcc24d4dc8c75dc5ac4fb"
-#> [18] "a4674e0d3f706665271f2afacfce56438ff5b546b93d9afcdfa5f15f8a3dd014"
-#> [19] "d00487b64701a3e8c4dc853ed32cb72c55909fa23fd36ed69fd09d19bd147f28"
-#> [20] "904846958dacd5ba0a54d653bae3e8a8d2cc899cd90519ab64ab6a1cd63b8722"
-#> [21] "6af8186c8836da87fbe9cd01111a7a61d98da6075c3fa52bcb3efd1d5af1d500"
-#> [22] "dc7c5b67bc6bdeacb24ad5df9000a63b0ae76c5052df74ff66f6eef4b2d85ad3"
-#> [23] "6a4bbe8a46f9a8e5fe858917c389f0bdb20e7afd83a1dfaf25bdebddc44882b2"
-#> [24] "d85d26f2afcf28614c52877f8dd9e854012f1cb39e8298138116be25ce3e4d5f"
-#> [25] "2abc4523c644263b33a8d0b926c7a3ddacf885512e670961ec6ba7348a186d97"
-#> [26] "33914cf7cfd773d80e95063b1d7a1cd331d34ebba4e212b1d98f1ec5ba6f41f6"
+#>  [1] "f835d22f9aebd310f5b98d63cb59a6d9c023f3310892c1b512c9b9f23fdc5a12"
+#>  [2] "26a4adaa72a2530ad690f73280c61506070791e0eaa85218b8fe543a3cfcffec"
+#>  [3] "cba638a78ee8f1522a2832ecd88041ce53fdb1688800af7dc1a4745002b28939"
+#>  [4] "5b31455fa2b732c65b41b01da63e8a170443d4cbee20077388bdb61e6a1c4bfd"
+#>  [5] "ff67ad25937e1cd8743c669a3480cd9c71605b6cd9edc91e45d899f247e88e3f"
+#>  [6] "2184c998ec8a904afd2b2e3548e71d276b2837d909e0ae0b382adede3cf5ed8e"
+#>  [7] "af9368faa74443e3dd969a4b2b36f475aae9e990d19f8e8bf2880922b64ad444"
+#>  [8] "413727fb0a0629a887c8703f4da048809ba0d894453e9dafc15d169fceca52e3"
+#>  [9] "2ff8f094652aa3ec8a43af8703f4617b150725326b86b5232fde64d187ffc2ab"
+#> [10] "0e6910ff4f88ff1c18980ceffc8c734660b2960556686d5a6834e885291f1caa"
+#> [11] "6377c16e06402b65c2257c1953c8403644bea6a81466aae6346d3a13a9103277"
+#> [12] "18f8a243726df4101496dd379b4628d5a036cafe714023b98a3f1e2fa8e2d890"
+#> [13] "f28133c2e063c4e9887909ff15b9741657ba0248d6b649e3b9f13f4f5d2387d8"
+#> [14] "af0e1d93a8195b899f131b15a8fcfd45c52fa0c6ca1472972e2599dcb307fa1a"
+#> [15] "0035cd8a1b9ad7f2a232145b5980df0176f6639fa4c2b14e3805fcf39dd30a6a"
+#> [16] "621f6a1768200e16e9db293df1fe14ca54e56831bc998da65740bc5d9f862f92"
+#> [17] "c4da7c6f4d8cc3a615ee65ba96d80fda496454dad383dd568994b2513febe0ed"
+#> [18] "98e16af9abcaabc5b2924de4918280859fd107661f30c9ee57739b2d01bf6cc1"
+#> [19] "16c063cf4d838b70dde70ec58eccbe3479ea53e253c7efcdaa15415f8868cc19"
+#> [20] "4e18f12181ce7b38635d91cf4ad1226145080c7ee4404f283b198ff32868b9a7"
+#> [21] "8a5c7a665ddf0f9f746b236733ad0d8d8d81eec2a80d87f1c8b4f865f89b7aaa"
+#> [22] "fc6d744c8c5b529bc0743932548472981dbca122358b9807eb3db058d84b7d75"
+#> [23] "acda8f62476cb1e30800e1042b2fafa9442cd00cc25c8eba08279968bae07cd3"
+#> [24] "854cb15f550315e39f8701bffca72fc5298a6f5915aabe3c9acad13042517b1a"
+#> [25] "82f5f3dd75641f0c7f8fdeb6e5bdb582a21607d8db0a54dd2c85f022326e5cee"
+#> [26] "68775ad58195a1e04076b93eaf43cadefbce97384aa7ea530968d44ba2e74ae8"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "e915ba7e" "9ff6e6a0" "431e555c" "95ecaa82" "ac5bd179" "1fa37b1a"
-#>  [7] "36b7597d" "5775f0e1" "fa0d1f01" "1d60c54"  "82e49a4b" "70ede298"
-#> [13] "feb0c472" "447908f3" "ef0e5134" "a4cd0164" "8b478e"   "ed556000"
-#> [19] "19109fa4" "fc9a8be3" "5f5bfbaf" "4c43d115" "e0f95d25" "41f20bef"
-#> [25] "3ea5bfa2" "30e3849d"
+#>  [1] "707bc477" "849d374a" "deffb90c" "648fef5a" "ad3b00af" "a8767463"
+#>  [7] "4bfb00fe" "513a790d" "757c6d38" "195cc4a1" "628f5cb9" "4fcfd234"
+#> [13] "441a2d"   "3082670e" "ec61b05a" "6a2fdb21" "7a6cee2e" "2e5a1eef"
+#> [19] "82eae382" "a43ca68d" "515165c5" "ba122f71" "d6621bd9" "566405f0"
+#> [25] "64ed7663" "ed59a548"
 ```
 
 ### Generate data containing PII
@@ -111,9 +111,9 @@ library(generator)
 library(detector)
 set.seed(2)
 n <- 6
-ashley_madison <- data.frame(name = r_full_names(6), 
-                             email = r_email_addresses(6), 
-                             phone_number = r_phone_numbers(6, use_hyphens = TRUE, use_parentheses = TRUE), 
+ashley_madison <- data.frame(name = r_full_names(n), 
+                             email = r_email_addresses(n), 
+                             phone_number = r_phone_numbers(n, use_hyphens = TRUE, use_parentheses = TRUE), 
                              stringsAsFactors = FALSE)
 ashley_madison
 #>                 name                  email   phone_number
@@ -142,8 +142,7 @@ detect(ashley_madison)
 ashley_madison %>% 
   mutate(name = anonymize(salt(name)), 
          email = anonymize(salt(email)), 
-         phone_number = anonymize(salt(phone_number))) %>% 
-  head
+         phone_number = anonymize(salt(phone_number)))
 #>                                                               name
 #> 1 a0430ac55c478ec88ceaecb60e48644eecd755954d04a9fe982a6697132798f9
 #> 2 a36494929aa63c106c4eb3b9359b3eabd524cbec64cc3e061c9f2a1506551706
