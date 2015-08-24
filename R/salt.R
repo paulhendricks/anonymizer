@@ -1,0 +1,13 @@
+#' Salt a vector.
+#'
+#' @param .x a vector.
+#' @param .chars set of characters to salt with.
+#' @param .n_chars an integer; number of characters to salt with.
+#' @return A salted version of the vector.
+#' @examples
+#' # Examples
+#' @export
+salt <- function(.x, .chars = letters, .n_chars = 5L) {
+  .y <- replicate(length(.x), paste0(sample(.chars, .n_chars, replace = TRUE), collapse = ""))
+  return(paste0(.y, .x, .y, sep = ""))
+}
