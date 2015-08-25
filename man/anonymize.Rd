@@ -4,14 +4,18 @@
 \alias{anonymize}
 \title{Anonymize a vector.}
 \usage{
-anonymize(.x, .algo = "sha256", ...)
+anonymize(.x, .algo = "sha256", .chars = letters, .n_chars = 5L, ...)
 }
 \arguments{
 \item{.x}{a vector.}
 
 \item{.algo}{the name of the algorithm.}
 
-\item{...}{additional arguments to be based to \code{salt}.}
+\item{.chars}{set of characters to salt with.}
+
+\item{.n_chars}{an integer; number of characters to salt with.}
+
+\item{...}{additional arguments to be based to \code{hash}.}
 }
 \value{
 An anonymized version of the data object.

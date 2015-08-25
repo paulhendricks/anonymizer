@@ -4,17 +4,16 @@
 \alias{hash}
 \title{Hash a vector.}
 \usage{
-hash(.x, .algo = "sha256")
+hash(.x, .algo = "sha256", ...)
 }
 \arguments{
 \item{.x}{a vector.}
 
 \item{.algo}{the name of the algorithm.}
-}
-\value{
-An anonymized version of the data object.
+
+\item{...}{additional arguments to be based to \code{\link[digest]{digest}}.}
 }
 \description{
-Hash a vector.
+See \code{\link[digest]{digest}} for additional documentation.
 }
 
