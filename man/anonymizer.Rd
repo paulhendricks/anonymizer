@@ -6,7 +6,6 @@
 \alias{anonymizer-package}
 \title{anonymizer: Anonymize Data Containing Personally Identifiable Information}
 \description{
-To learn more about anonymizer, start with the vignettes:
-\code{browseVignettes(package = "anonymizer")}
+anonymizer: Anonymize Data Containing Personally Identifiable Information
 }
 

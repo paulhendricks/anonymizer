@@ -19,7 +19,4 @@ A salted version of the vector.
 \description{
 Salt a vector.
 }
-\examples{
-# Examples
-}
 

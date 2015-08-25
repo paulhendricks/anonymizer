@@ -17,7 +17,4 @@ An anonymized version of the data object.
 \description{
 Anonymize a vector.
 }
-\examples{
-# Examples
-}
 
