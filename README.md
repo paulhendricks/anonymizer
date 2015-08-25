@@ -33,10 +33,7 @@ API
 
 ``` r
 library(dplyr, warn.conflicts = FALSE)
-library(generator)
-library(detector)
 library(anonymizer)
-
 set.seed(1)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
@@ -50,6 +47,7 @@ letters %>% head %>% salt %>% anonymize(.algo = "crc32")
 ### Generate data containing PII
 
 ``` r
+library(generator)
 n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
@@ -72,6 +70,7 @@ knitr::kable(ashley_madison, format = "markdown")
 ### Detect data containing PII
 
 ``` r
+library(detector)
 detect(ashley_madison)
 #> Testing column: name
 #> Testing column: email

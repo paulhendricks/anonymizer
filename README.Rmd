@@ -50,10 +50,7 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE)
-library(generator)
-library(detector)
 library(anonymizer)
-
 set.seed(1)
 letters %>% head
 letters %>% head %>% salt
@@ -63,6 +60,7 @@ letters %>% head %>% salt %>% anonymize(.algo = "crc32")
 ### Generate data containing PII
 
 ```{r}
+library(generator)
 n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
@@ -76,6 +74,7 @@ knitr::kable(ashley_madison, format = "markdown")
 ### Detect data containing PII
 
 ```{r}
+library(detector)
 detect(ashley_madison)
 ```
 
