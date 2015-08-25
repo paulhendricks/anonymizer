@@ -2,7 +2,7 @@
 anonymizer
 ==========
 
-[![Build Status](https://travis-ci.org/paulhendricks/anonymizer.png?branch=master)](https://travis-ci.org/paulhendricks/anonymizer) [![Build status](https://ci.appveyor.com/api/projects/status/au9ww7v8mhgr59s8/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/anonymizer/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/anonymizer/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/anonymizer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+[![Build Status](https://travis-ci.org/paulhendricks/anonymizer.png?branch=master)](https://travis-ci.org/paulhendricks/anonymizer) [![Build status](https://ci.appveyor.com/api/projects/status/qu5j8q9wvit2i3pe/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/anonymizer/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/anonymizer/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/anonymizer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
 `anonymizer` anaonymizes data containing Personally Identifiable Information. `anonymizer` anonimyzes the following types of PII:
 
@@ -63,18 +63,18 @@ letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "dalajadalaj" "eoguhbeoguh" "avkhccavkhc" "wjcjydwjcjy" "ylkifeylkif"
-#>  [6] "ycxbefycxbe" "vougrgvougr" "qxbgrhqxbgr" "okasqiokasq" "tgtpgjtgtpg"
-#> [11] "rzexnkrzexn" "jtcagljtcag" "hkhcvmhkhcv" "yrzeinyrzei" "ogclxoogclx"
-#> [16] "froprpfropr" "jnoqaqjnoqa" "ptdfjrptdfj" "koydxskoydx" "jwshhtjwshh"
-#> [21] "phuynuphuyn" "uwsnevuwsne" "zdnyowzdnyo" "hgltqxhgltq" "ilpdnyilpdn"
-#> [26] "dzgrwzdzgrw"
+#>  [1] "gwqooagwqoo" "pwizlbpwizl" "minvycminvy" "vtqqsdvtqqs" "jrogwejrogw"
+#>  [6] "kcbmxfkcbmx" "pygfigpygfi" "wjftmhwjftm" "heyfziheyfz" "edqqdjedqqd"
+#> [11] "mzaezkmzaez" "ljsxflljsxf" "noihxmnoihx" "ubyiznubyiz" "blzxsoblzxs"
+#> [16] "wxknrpwxknr" "nxhjfqnxhjf" "nmfhxrnmfhx" "bfxlesbfxle" "vvmcjtvvmcj"
+#> [21] "tpgcvutpgcv" "maeamvmaeam" "kkgfawkkgfa" "slqhgxslqhg" "vrkuqyvrkuq"
+#> [26] "oyjkizoyjki"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "fe0fb9fd" "65d2d28f" "269adb13" "bca81e16" "670d8fc8" "896dd01d"
-#>  [7] "ded71a1a" "c0dc2934" "19d9b4fb" "dce5f0b1" "bcc08456" "a9d8dde6"
-#> [13] "b1951017" "be8d3137" "735ff91f" "c10c431b" "d93539fc" "7593f109"
-#> [19] "6355d58b" "e0024ce2" "9447b769" "3414aab"  "1cbb4a01" "af7e8ecb"
-#> [25] "d165ffd"  "d8436f7"
+#>  [1] "79ad8220" "d0d0a8c1" "291f1c46" "51c26c70" "60e359e5" "1594cbd1"
+#>  [7] "45b6297f" "f0dac948" "a028b932" "4ba565b5" "76084866" "a5914a5e"
+#> [13] "c04e2f96" "1e25476a" "ee5576c0" "927c11a0" "8e423c15" "2eb8e685"
+#> [19] "8a6f9ed7" "1698f1b3" "aca8c0d4" "4bc69cce" "ebbfeb41" "a5146c7b"
+#> [25] "20d1e771" "33302285"
 ```
 
 ### Generate data containing PII
