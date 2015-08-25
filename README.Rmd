@@ -54,7 +54,7 @@ library(generator)
 library(detector)
 library(anonymizer)
 
-set.seed(2)
+set.seed(1)
 letters
 letters %>% salt
 letters %>% salt %>% anonymize(.algo = "crc32")
