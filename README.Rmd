@@ -68,7 +68,6 @@ library(anonymizer)
 library(dplyr)
 letters
 letters %>% salt
-letters %>% salt %>% anonymize
 letters %>% salt %>% anonymize(.algo = "crc32")
 ```
 
