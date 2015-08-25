@@ -78,10 +78,11 @@ library(generator)
 library(detector)
 set.seed(2)
 n <- 6
-ashley_madison <- data.frame(name = r_full_names(n), 
-                             email = r_email_addresses(n), 
-                             phone_number = r_phone_numbers(n, use_hyphens = TRUE, use_parentheses = TRUE), 
-                             stringsAsFactors = FALSE)
+ashley_madison <- 
+  data.frame(name = r_full_names(n), 
+             email = r_email_addresses(n), 
+             phone_number = r_phone_numbers(n, use_hyphens = TRUE), 
+             stringsAsFactors = FALSE)
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
@@ -95,8 +96,8 @@ detect(ashley_madison)
 
 ```{r}
 ashley_madison %>% 
-  mutate(name = anonymize(salt(name)), 
-         email = anonymize(salt(email)), 
-         phone_number = anonymize(salt(phone_number))) %>% 
+  mutate(name = anonymize(salt(name), .algo = "crc32"), 
+         email = anonymize(salt(email), .algo = "crc32"), 
+         phone_number = anonymize(salt(phone_number), .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```
