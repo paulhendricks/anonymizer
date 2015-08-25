@@ -7,6 +7,7 @@
 #' # Examples
 #' @export
 anonymize <- function(.x, .algo = "sha256"){
+  if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
   unq_hashes <- vapply(unique(.x),
                        function(object) digest::digest(object, algo = .algo),
                        character(1))
