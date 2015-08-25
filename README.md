@@ -49,13 +49,8 @@ letters %>% head %>% hash
 #> [6] "6f1066d075c43d9d362b871d35b6bb0aba94407427e70d2bedb28570ba06ad47"
 letters %>% head %>% salt %>% hash(.algo = "crc32")
 #> [1] "5877c483" "d1b55731" "f17920d3" "ad4cbf5c" "530cd27e" "73a77c84"
-letters %>% head %>% anonymize
-#> [1] "2356dc731242e9404deb4fdb17d1e2c25571f5b9c3f0ac64adc9e44155f3a902"
-#> [2] "a67aed883d6f1bf5c6d30c9fe8ebb47471c63fb5aa9c0b8fd2d44ace8578bcf2"
-#> [3] "03afaa68f08cd771691a0433e81566cffab0e9ed08388756b9728d82d1e8e477"
-#> [4] "e6a3a6639ed1976c05fa1b375081214f7486918d9587010f32100bccb54133e3"
-#> [5] "b167a569e5674ceff38a702bf3092ca72a9edc68b726296d6f18dd1c927689f6"
-#> [6] "6b7ac5b5ef7a59e40020ef660dd168a917a85f24c950f97935d4dfe5549f55a9"
+letters %>% head %>% anonymize(.algo = "crc32")
+#> [1] "3862858e" "540e8ae4" "d1bbf86"  "27094db1" "33964b76" "38984207"
 ```
 
 ### Generate data containing fake PII
