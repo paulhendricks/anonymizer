@@ -64,8 +64,13 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 ## API
 
 ```{r}
-library(anonymizer)
-library(dplyr)
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(generator)
+  library(detector)
+  library(anonymizer)
+})
+
 letters
 letters %>% salt
 letters %>% salt %>% anonymize(.algo = "crc32")
@@ -74,8 +79,6 @@ letters %>% salt %>% anonymize(.algo = "crc32")
 ### Generate data containing PII
 
 ```{r}
-library(generator)
-library(detector)
 set.seed(2)
 n <- 6
 ashley_madison <- 

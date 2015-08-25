@@ -47,41 +47,34 @@ API
 ---
 
 ``` r
-library(anonymizer)
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> 
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> 
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(generator)
+  library(detector)
+  library(anonymizer)
+})
+
 letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "qpdigaqpdig" "uhsagbuhsag" "xotmccxotmc" "guhqtdguhqt" "bhngoebhngo"
-#>  [6] "xcquzfxcquz" "zednzgzednz" "ksbgthksbgt" "tgnfpitgnfp" "oobqujoobqu"
-#> [11] "hskrqkhskrq" "buvailbuvai" "ggpmbmggpmb" "efpaznefpaz" "ohtacoohtac"
-#> [16] "wxwddpwxwdd" "psphuqpsphu" "ilrpwrilrpw" "poobyspooby" "sbkjltsbkjl"
-#> [21] "bzlhfubzlhf" "qnrfevqnrfe" "lcyyswlcyys" "coyamxcoyam" "ihdnvyihdnv"
-#> [26] "tgommztgomm"
+#>  [1] "ezxxbaezxxb" "yqfdcbyqfdc" "predkcpredk" "xuajudxuaju" "rnmjeernmje"
+#>  [6] "ffxxefffxxe" "irfubgirfub" "thvrshthvrs" "ucgmqiucgmq" "hlqxujhlqxu"
+#> [11] "apsmtkapsmt" "eogbnleogbn" "tbaahmtbaah" "hwuiinhwuii" "ydyehoydyeh"
+#> [16] "rrtsdprrtsd" "uykkmquykkm" "iricgriricg" "deexxsdeexx" "ytsintytsin"
+#> [21] "gzakrugzakr" "jrxqmvjrxqm" "sfozlwsfozl" "qsqdxxqsqdx" "exbtgyexbtg"
+#> [26] "ureoyzureoy"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "28758723" "b32a9617" "e40f399e" "664836f8" "4a9fc510" "fe212359"
-#>  [7] "b67ceaeb" "991a477d" "6b5d760"  "bd3d447e" "91f9b6e4" "c1200d1c"
-#> [13] "c7a4ca1b" "45fc7e05" "718b7fea" "8b643ab0" "4a83fc2f" "90f9a426"
-#> [19] "662b4d2e" "c2ea29c7" "5a3bd347" "dffa4673" "193236"   "8cfd61a6"
-#> [25] "2173732a" "723094b3"
+#>  [1] "f06a8fc1" "97dea326" "52cfaa46" "e22aa796" "11be419b" "e7137737"
+#>  [7] "d8adfd8"  "2027d746" "56b4ebce" "279e6615" "9358f65c" "e7c98690"
+#> [13] "a21fcc29" "bd01a8ff" "4a76f0ed" "749882b2" "cd54208a" "cef7dc48"
+#> [19] "d3409f0f" "8f14110b" "c2c0dd22" "1bf3bd35" "8358e9c6" "de61f1e5"
+#> [25] "ea116985" "6c2e1b8e"
 ```
 
 ### Generate data containing PII
 
 ``` r
-library(generator)
-library(detector)
 set.seed(2)
 n <- 6
 ashley_madison <- 
