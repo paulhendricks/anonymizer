@@ -32,12 +32,10 @@ API
 ---
 
 ``` r
-suppressPackageStartupMessages({
-  library(dplyr)
-  library(generator)
-  library(detector)
-  library(anonymizer)
-})
+library(dplyr, warn.conflicts = FALSE)
+library(generator)
+library(detector)
+library(anonymizer)
 
 set.seed(2)
 letters
