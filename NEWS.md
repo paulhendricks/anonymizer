@@ -1,3 +1,13 @@
+# anonymizer 0.1.0.9000
+
+## Improvements
+
+* None.
+  
+## Bug fixes
+
+* None.
+
 # anonymizer 0.1.0
 
 ## Improvements
