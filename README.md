@@ -51,7 +51,8 @@ letters %>% head %>% anonymize(.algo = "crc32")
 #> [1] "b0891ad8" "13484fdf" "75541275" "d6a99ed4" "360b9454" "3994cdef"
 ```
 
-### Generate data containing fake PII
+Generate data containing fake PII
+---------------------------------
 
 ``` r
 library(generator)
@@ -74,7 +75,8 @@ knitr::kable(ashley_madison, format = "markdown")
 | Georgann Bahringer | <lqxzkdpi@nf.fon>      | (683)-284-8265 |
 | Tonda Kozey        | <q@y.pom>              | (958)-417-3516 |
 
-### Detect data containing PII
+Detect data containing PII
+--------------------------
 
 ``` r
 library(detector)
@@ -86,7 +88,8 @@ detect(ashley_madison)
 #> [1] TRUE
 ```
 
-### Anonymize data containing PII
+Anonymize data containing PII
+-----------------------------
 
 ``` r
 ashley_madison %>% 
