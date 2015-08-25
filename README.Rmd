@@ -54,7 +54,9 @@ library(anonymizer)
 set.seed(1)
 letters %>% head
 letters %>% head %>% salt
-letters %>% head %>% salt %>% anonymize(.algo = "crc32")
+letters %>% head %>% hash
+letters %>% head %>% salt %>% hash(.algo = "crc32")
+letters %>% head %>% anonymize
 ```
 
 ### Generate data containing fake PII
@@ -82,8 +84,8 @@ detect(ashley_madison)
 
 ```{r}
 ashley_madison %>% 
-  mutate(name = anonymize(salt(name), .algo = "crc32"), 
-         email = anonymize(salt(email), .algo = "crc32"), 
-         phone_number = anonymize(salt(phone_number), .algo = "crc32")) %>% 
+  mutate(name = anonymize(name, .algo = "crc32"), 
+         email = anonymize(email, .algo = "crc32"), 
+         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```

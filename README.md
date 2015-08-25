@@ -40,8 +40,22 @@ letters %>% head
 letters %>% head %>% salt
 #> [1] "gjoxfagjoxf" "xyrqbbxyrqb" "ferjucferju" "mszjudmszju" "yfqdgeyfqdg"
 #> [6] "kajwifkajwi"
-letters %>% head %>% salt %>% anonymize(.algo = "crc32")
+letters %>% head %>% hash
+#> [1] "fb1a678ef965ad4a66c712d2161f20319091cb4e7611e1925df671018c833f72"
+#> [2] "61ba1f136aebcd31977da80fae3afffe18b83691e2aa2c61f948d85085fd8e56"
+#> [3] "2eea4ca3e3a6518aaffdcd5bada74dc92c3e0170ab17f7826aa1d1222f8a1ef5"
+#> [4] "d2aebba0a3c95f6d03acf85bd9d41e602b92675ef4741063ebb2091e064d86cd"
+#> [5] "09cab1873b8f76f0d880aa963a5bd2f7c858af261acbde2a6cdee4ce993a12b3"
+#> [6] "6f1066d075c43d9d362b871d35b6bb0aba94407427e70d2bedb28570ba06ad47"
+letters %>% head %>% salt %>% hash(.algo = "crc32")
 #> [1] "5877c483" "d1b55731" "f17920d3" "ad4cbf5c" "530cd27e" "73a77c84"
+letters %>% head %>% anonymize
+#> [1] "2356dc731242e9404deb4fdb17d1e2c25571f5b9c3f0ac64adc9e44155f3a902"
+#> [2] "a67aed883d6f1bf5c6d30c9fe8ebb47471c63fb5aa9c0b8fd2d44ace8578bcf2"
+#> [3] "03afaa68f08cd771691a0433e81566cffab0e9ed08388756b9728d82d1e8e477"
+#> [4] "e6a3a6639ed1976c05fa1b375081214f7486918d9587010f32100bccb54133e3"
+#> [5] "b167a569e5674ceff38a702bf3092ca72a9edc68b726296d6f18dd1c927689f6"
+#> [6] "6b7ac5b5ef7a59e40020ef660dd168a917a85f24c950f97935d4dfe5549f55a9"
 ```
 
 ### Generate data containing fake PII
@@ -58,14 +72,14 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name             | email                     | phone\_number  |
-|:-----------------|:--------------------------|:---------------|
-| Linnie Heathcote | <lrjhqeoc@gdfbosptiz.vpy> | (735)-873-4857 |
-| Ashley Harris    | <zpfc@mxo.zsi>            | (683)-284-8265 |
-| Tad Kozey        | <arcko@zm.mes>            | (958)-417-3516 |
-| Tony Toy         | <fzonb@aqwnml.zmq>        | (372)-259-2541 |
-| Akilah Stracke   | <gskeqcr@pnh.lme>         | (367)-178-8356 |
-| Buster Howell    | <hfgujq@w.kbi>            | (932)-234-9521 |
+| name               | email                   | phone\_number  |
+|:-------------------|:------------------------|:---------------|
+| Erwin Gleichner    | <zsijdaobxk@zmldqj.nfy> | (236)-916-9734 |
+| Edmond Zemlak      | <capvnl@nympzf.gsk>     | (983)-329-5842 |
+| Rosy Murray        | <cv@pnhkldwb.hfg>       | (146)-423-6457 |
+| Fredericka Effertz | <uwjbhpglz@wjyuo.tpv>   | (548)-357-2493 |
+| Fumiko Champlin    | <xmv@es.sxn>            | (247)-784-6412 |
+| Zoraida Krajcik    | <cxgnzryo@gfmz.emn>     | (537)-532-8621 |
 
 ### Detect data containing PII
 
@@ -83,17 +97,17 @@ detect(ashley_madison)
 
 ``` r
 ashley_madison %>% 
-  mutate(name = anonymize(salt(name), .algo = "crc32"), 
-         email = anonymize(salt(email), .algo = "crc32"), 
-         phone_number = anonymize(salt(phone_number), .algo = "crc32")) %>% 
+  mutate(name = anonymize(name, .algo = "crc32"), 
+         email = anonymize(email, .algo = "crc32"), 
+         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| c44f91b6 | bdadef87 | 1a8f6fec      |
-| d1e54457 | 11127bba | b5bf6b80      |
-| a7583c93 | 2c7ab646 | a20e9ffd      |
-| c2794502 | 311d8596 | 224f4330      |
-| 618734da | 36de9a41 | c1b8b8d3      |
-| 900161ac | 3ab8e32b | 7f48a3c9      |
+| f3817dc3 | cc750790 | d4b58895      |
+| d081f0b8 | 7d164100 | 39acc497      |
+| aaf0e448 | b27aeb9c | 47740a37      |
+| 745cee43 | f419860e | b54acdb3      |
+| 84568bb3 | a4582a03 | f33d996d      |
+| 910bf193 | 7961f4   | 3d5a7068      |
