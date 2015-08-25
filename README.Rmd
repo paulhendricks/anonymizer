@@ -82,7 +82,7 @@ ashley_madison <- data.frame(name = r_full_names(n),
                              email = r_email_addresses(n), 
                              phone_number = r_phone_numbers(n, use_hyphens = TRUE, use_parentheses = TRUE), 
                              stringsAsFactors = FALSE)
-ashley_madison
+knitr::kable(ashley_madison, format = "markdown")
 ```
 
 ### Detect data containing PII
@@ -97,5 +97,6 @@ detect(ashley_madison)
 ashley_madison %>% 
   mutate(name = anonymize(salt(name)), 
          email = anonymize(salt(email)), 
-         phone_number = anonymize(salt(phone_number)))
+         phone_number = anonymize(salt(phone_number))) %>% 
+  knitr::kable(format = "markdown")
 ```
