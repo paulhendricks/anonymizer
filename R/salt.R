@@ -8,6 +8,7 @@
 #' # Examples
 #' @export
 salt <- function(.x, .chars = letters, .n_chars = 5L) {
+  if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
   .y <- replicate(length(.x), paste0(sample(.chars, .n_chars, replace = TRUE), collapse = ""))
   return(paste0(.y, .x, .y, sep = ""))
 }
