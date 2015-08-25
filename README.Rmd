@@ -23,22 +23,7 @@ knitr::opts_chunk$set(
 [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer)
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
-`anonymizer` anaonymizes data containing Personally Identifiable Information. `anonymizer` anonimyzes the following types of PII:
-
-* Full name
-* Home address
-* E-mail
-* National identification number
-* Passport number
-* Social Security number
-* IP address
-* Vehicle registration plate number
-* Driver's license number
-* Credit card number
-* Date of birth
-* Birthplace
-* Telephone number
-* Latitude and longtiude
+`anonymizer` anaonymizes data containing Personally Identifiable Information using a combination of [salting](https://en.wikipedia.org/wiki/Salt_%28cryptography%29) and [hashing](https://en.wikipedia.org/wiki/Hash_function).
 
 ## Installation
 

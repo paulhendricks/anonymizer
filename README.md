@@ -4,22 +4,7 @@ anonymizer
 
 [![Build Status](https://travis-ci.org/paulhendricks/anonymizer.png?branch=master)](https://travis-ci.org/paulhendricks/anonymizer) [![Build status](https://ci.appveyor.com/api/projects/status/qu5j8q9wvit2i3pe/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/anonymizer/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/anonymizer/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/anonymizer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
-`anonymizer` anaonymizes data containing Personally Identifiable Information. `anonymizer` anonimyzes the following types of PII:
-
--   Full name
--   Home address
--   E-mail
--   National identification number
--   Passport number
--   Social Security number
--   IP address
--   Vehicle registration plate number
--   Driver's license number
--   Credit card number
--   Date of birth
--   Birthplace
--   Telephone number
--   Latitude and longtiude
+`anonymizer` anaonymizes data containing Personally Identifiable Information using a combination of [salting](https://en.wikipedia.org/wiki/Salt_%28cryptography%29) and [hashing](https://en.wikipedia.org/wiki/Hash_function).
 
 Installation
 ------------
@@ -58,18 +43,18 @@ letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "ezxxbaezxxb" "yqfdcbyqfdc" "predkcpredk" "xuajudxuaju" "rnmjeernmje"
-#>  [6] "ffxxefffxxe" "irfubgirfub" "thvrshthvrs" "ucgmqiucgmq" "hlqxujhlqxu"
-#> [11] "apsmtkapsmt" "eogbnleogbn" "tbaahmtbaah" "hwuiinhwuii" "ydyehoydyeh"
-#> [16] "rrtsdprrtsd" "uykkmquykkm" "iricgriricg" "deexxsdeexx" "ytsintytsin"
-#> [21] "gzakrugzakr" "jrxqmvjrxqm" "sfozlwsfozl" "qsqdxxqsqdx" "exbtgyexbtg"
-#> [26] "ureoyzureoy"
+#>  [1] "rfyxgarfyxg" "bcbiwbbcbiw" "daqztcdaqzt" "wykjqdwykjq" "ehrogeehrog"
+#>  [6] "jopikfjopik" "mnrrugmnrru" "vwordhvword" "nvglkinvglk" "dvdhpjdvdhp"
+#> [11] "hmevxkhmevx" "klowmlklowm" "vmqirmvmqir" "adgmonadgmo" "jhhzsojhhzs"
+#> [16] "gcvjwpgcvjw" "eifpmqeifpm" "iwlepriwlep" "fygbcsfygbc" "sziistsziis"
+#> [21] "gzpycugzpyc" "etdskvetdsk" "rrckdwrrckd" "sowroxsowro" "tjiumytjium"
+#> [26] "tlfzgztlfzg"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "f06a8fc1" "97dea326" "52cfaa46" "e22aa796" "11be419b" "e7137737"
-#>  [7] "d8adfd8"  "2027d746" "56b4ebce" "279e6615" "9358f65c" "e7c98690"
-#> [13] "a21fcc29" "bd01a8ff" "4a76f0ed" "749882b2" "cd54208a" "cef7dc48"
-#> [19] "d3409f0f" "8f14110b" "c2c0dd22" "1bf3bd35" "8358e9c6" "de61f1e5"
-#> [25] "ea116985" "6c2e1b8e"
+#>  [1] "ba0673b3" "4231011e" "a039f52a" "244eea3e" "244c41f1" "9211f546"
+#>  [7] "4afe705d" "511c2efa" "b9b9d754" "6ed8e474" "e6d82830" "521fb0ed"
+#> [13] "587b18c3" "93486242" "5971faaa" "cfbdc0f0" "3c0d1ed4" "98bad5e4"
+#> [19] "9181f0a4" "4b72b631" "ab620781" "1459903e" "7f48e7e7" "274bcba5"
+#> [25] "1968b80d" "d1478138"
 ```
 
 ### Generate data containing PII
