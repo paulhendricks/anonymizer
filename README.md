@@ -44,7 +44,7 @@ letters %>% head %>% salt %>% anonymize(.algo = "crc32")
 #> [1] "5877c483" "d1b55731" "f17920d3" "ad4cbf5c" "530cd27e" "73a77c84"
 ```
 
-### Generate data containing PII
+### Generate data containing fake PII
 
 ``` r
 library(generator)

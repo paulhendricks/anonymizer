@@ -57,7 +57,7 @@ letters %>% head %>% salt
 letters %>% head %>% salt %>% anonymize(.algo = "crc32")
 ```
 
-### Generate data containing PII
+### Generate data containing fake PII
 
 ```{r}
 library(generator)
