@@ -4,7 +4,7 @@ anonymizer
 
 [![Build Status](https://travis-ci.org/paulhendricks/anonymizer.png?branch=master)](https://travis-ci.org/paulhendricks/anonymizer) [![Build status](https://ci.appveyor.com/api/projects/status/qu5j8q9wvit2i3pe/branch/master?svg=true)](https://ci.appveyor.com/project/paulhendricks/anonymizer/branch/master) [![codecov.io](http://codecov.io/github/paulhendricks/anonymizer/coverage.svg?branch=master)](http://codecov.io/github/paulhendricks/anonymizer?branch=master) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer) [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 
-`anonymizer` anaonymizes data containing Personally Identifiable Information using a combination of [salting](https://en.wikipedia.org/wiki/Salt_%28cryptography%29) and [hashing](https://en.wikipedia.org/wiki/Hash_function).
+`anonymizer` anonymizes data containing Personally Identifiable Information using a combination of [salting](https://en.wikipedia.org/wiki/Salt_%28cryptography%29) and [hashing](https://en.wikipedia.org/wiki/Hash_function). You can find quality examples of data anonymization in R [here](http://jangorecki.github.io/blog/2014-11-07/Data-Anonymization-in-R.html) and [here](http://4dpiecharts.com/2011/08/23/anonymising-data/).
 
 Installation
 ------------
@@ -43,18 +43,18 @@ letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "rfyxgarfyxg" "bcbiwbbcbiw" "daqztcdaqzt" "wykjqdwykjq" "ehrogeehrog"
-#>  [6] "jopikfjopik" "mnrrugmnrru" "vwordhvword" "nvglkinvglk" "dvdhpjdvdhp"
-#> [11] "hmevxkhmevx" "klowmlklowm" "vmqirmvmqir" "adgmonadgmo" "jhhzsojhhzs"
-#> [16] "gcvjwpgcvjw" "eifpmqeifpm" "iwlepriwlep" "fygbcsfygbc" "sziistsziis"
-#> [21] "gzpycugzpyc" "etdskvetdsk" "rrckdwrrckd" "sowroxsowro" "tjiumytjium"
-#> [26] "tlfzgztlfzg"
+#>  [1] "gljxbagljxb" "mqbxzbmqbxz" "gqxcccgqxcc" "jxwlkdjxwlk" "cwzbyecwzby"
+#>  [6] "uxctofuxcto" "dqceqgdqceq" "uhiczhuhicz" "cmqnjicmqnj" "qjbuejqjbue"
+#> [11] "scvedkscved" "zxqellzxqel" "joiammjoiam" "fhtilnfhtil" "oimpeooimpe"
+#> [16] "aimdxpaimdx" "tazxiqtazxi" "pamkbrpamkb" "kvpoaskvpoa" "hhnisthhnis"
+#> [21] "amtgruamtgr" "xjdobvxjdob" "sgqliwsgqli" "etbiexetbie" "scmmcyscmmc"
+#> [26] "soybdzsoybd"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "ba0673b3" "4231011e" "a039f52a" "244eea3e" "244c41f1" "9211f546"
-#>  [7] "4afe705d" "511c2efa" "b9b9d754" "6ed8e474" "e6d82830" "521fb0ed"
-#> [13] "587b18c3" "93486242" "5971faaa" "cfbdc0f0" "3c0d1ed4" "98bad5e4"
-#> [19] "9181f0a4" "4b72b631" "ab620781" "1459903e" "7f48e7e7" "274bcba5"
-#> [25] "1968b80d" "d1478138"
+#>  [1] "a4dfda6b" "693d92d0" "cde379b2" "53af8b17" "25ce3e1"  "c409e3f9"
+#>  [7] "31d43d90" "cded510f" "f002fb12" "8b08699a" "d5d3e23a" "e214b977"
+#> [13] "cdf3ee9b" "68a875a2" "74dcb4ea" "3d018d5a" "4fd07433" "f321a8f" 
+#> [19] "d7ca241e" "e1a81bf0" "a019f6fe" "493908d9" "72b6dfd3" "6064816" 
+#> [25] "85aa6dbb" "f82d5d4b"
 ```
 
 ### Generate data containing PII
