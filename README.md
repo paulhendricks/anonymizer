@@ -39,28 +39,28 @@ suppressPackageStartupMessages({
   library(anonymizer)
 })
 
+set.seed(2)
 letters
 #>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 #> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 letters %>% salt
-#>  [1] "gljxbagljxb" "mqbxzbmqbxz" "gqxcccgqxcc" "jxwlkdjxwlk" "cwzbyecwzby"
-#>  [6] "uxctofuxcto" "dqceqgdqceq" "uhiczhuhicz" "cmqnjicmqnj" "qjbuejqjbue"
-#> [11] "scvedkscved" "zxqellzxqel" "joiammjoiam" "fhtilnfhtil" "oimpeooimpe"
-#> [16] "aimdxpaimdx" "tazxiqtazxi" "pamkbrpamkb" "kvpoaskvpoa" "hhnisthhnis"
-#> [21] "amtgruamtgr" "xjdobvxjdob" "sgqliwsgqli" "etbiexetbie" "scmmcyscmmc"
-#> [26] "soybdzsoybd"
+#>  [1] "esoeyaesoey" "ydvmobydvmo" "ogtekcogtek" "wzflbdwzflb" "rkvdjerkvdj"
+#>  [6] "mdjzdfmdjzd" "aevwngaevwn" "qvhrdhqvhrd" "zhceyizhcey" "uzjnvjuzjnv"
+#> [11] "aaryhkaaryh" "vuzpslvuzps" "uxqgwmuxqgw" "lklfbnlklfb" "hibeeohibee"
+#> [16] "thwkopthwko" "jrakfqjrakf" "wzitirwziti" "zkjomszkjom" "flccltflccl"
+#> [21] "flzvhuflzvh" "pxlddvpxldd" "atjovwatjov" "vwcyoxvwcyo" "agzxgyagzxg"
+#> [26] "tohsiztohsi"
 letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "a4dfda6b" "693d92d0" "cde379b2" "53af8b17" "25ce3e1"  "c409e3f9"
-#>  [7] "31d43d90" "cded510f" "f002fb12" "8b08699a" "d5d3e23a" "e214b977"
-#> [13] "cdf3ee9b" "68a875a2" "74dcb4ea" "3d018d5a" "4fd07433" "f321a8f" 
-#> [19] "d7ca241e" "e1a81bf0" "a019f6fe" "493908d9" "72b6dfd3" "6064816" 
-#> [25] "85aa6dbb" "f82d5d4b"
+#>  [1] "4194dc76" "d315166e" "7177cb77" "9213935"  "992f98f5" "6bde7398"
+#>  [7] "6f17e67b" "57725b30" "8a78c8d7" "9a3d7fda" "73fe3b46" "fe105452"
+#> [13] "c30ebac"  "3a8a5d7c" "c6c5a82d" "d5639bd9" "400c7f3"  "f1c8ed2f"
+#> [19] "7ea02b28" "1d4aa1a7" "7a709e7d" "f47a0fed" "f3c06827" "5b4eba5a"
+#> [25] "be3ba052" "75dc348b"
 ```
 
 ### Generate data containing PII
 
 ``` r
-set.seed(2)
 n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
@@ -70,14 +70,14 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name               | email                    | phone\_number |
-|:-------------------|:-------------------------|:--------------|
-| Ronnie Rowe        | <rjudh@m.dix>            | 291-735-8791  |
-| Shanita Daugherty  | <eu@w.npu>               | 951-387-3742  |
-| Albertina Jacobson | <dyh@cewsvhk.vay>        | 732-917-3645  |
-| Giuseppe Stehr     | <huswnop@xpgtjivebs.ibe> | 249-369-4652  |
-| Kiera Wolf         | <hv@koipaxdq.zir>        | 532-483-8362  |
-| Leeann Fadel       | <kjnz@fkcxjeisou.pwk>    | 136-916-3618  |
+| name                | email                    | phone\_number |
+|:--------------------|:-------------------------|:--------------|
+| Lillia Stanton      | <h@zqy.fym>              | 162-215-1894  |
+| Timothy Greenfelder | <jghrko@kfbdlrji.wtb>    | 695-385-1943  |
+| Jessi Sawayn        | <xb@clsdoam.lse>         | 315-457-7982  |
+| Valentin Kuhn       | <gcjeofb@be.wyj>         | 291-279-7541  |
+| Ngan Wunsch         | <c@o.vuy>                | 186-632-8653  |
+| Arnette Fisher      | <anioudxek@kvesrmbn.dfc> | 135-745-8712  |
 
 ### Detect data containing PII
 
@@ -103,9 +103,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 89c493b8 | f0fcde77 | 3daacbce      |
-| e6f8d6c9 | b1c43e8b | 90de1f79      |
-| 4921d9a4 | a60285a2 | d689cab2      |
-| 4be73eda | 140ade38 | eb607d7c      |
-| a4053592 | f10c29a1 | e6c8f671      |
-| 93a8436f | 399993f9 | 5228fca6      |
+| a6e47f3  | 3ce7a903 | df7f2e2       |
+| 3ee38a40 | 190dc77f | 925f0632      |
+| d9314fa2 | 647392db | 66011fcc      |
+| 80a729b8 | 87f5b8eb | 7d7cb464      |
+| 54a1fe5d | 1fda11b7 | 9327a120      |
+| b121bd0  | 92eb48c7 | ee0213a2      |
