@@ -1,7 +1,8 @@
 Package: anonymizer
 Title: Anonymize Data Containing Personally Identifiable Information
-Version: 0.0.0.9000
-Description: Anonymize Data Containing Personally Identifiable Information.
+Version: 0.1.0
+Description: Allows users to quickly and easily anonymize data containing
+    Personally Identifiable Information (PII) through convenience functions.
 Authors@R: person("Paul", "Hendricks", , "paul.hendricks.2013@owu.edu", c("aut", "cre"))
 URL: https://github.com/paulhendricks/anonymizer
 BugReports: https://github.com/paulhendricks/anonymizer/issues
