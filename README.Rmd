@@ -67,7 +67,7 @@ n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
              email = r_email_addresses(n), 
-             phone_number = r_phone_numbers(n, use_hyphens = TRUE), 
+             phone_number = r_phone_numbers(n, use_hyphens = TRUE, use_parentheses = TRUE), 
              stringsAsFactors = FALSE)
 knitr::kable(ashley_madison, format = "markdown")
 ```

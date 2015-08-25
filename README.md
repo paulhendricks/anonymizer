@@ -54,19 +54,19 @@ n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
              email = r_email_addresses(n), 
-             phone_number = r_phone_numbers(n, use_hyphens = TRUE), 
+             phone_number = r_phone_numbers(n, use_hyphens = TRUE, use_parentheses = TRUE), 
              stringsAsFactors = FALSE)
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name             | email                     | phone\_number |
-|:-----------------|:--------------------------|:--------------|
-| Linnie Heathcote | <lrjhqeoc@gdfbosptiz.vpy> | 735-873-4857  |
-| Ashley Harris    | <zpfc@mxo.zsi>            | 683-284-8265  |
-| Tad Kozey        | <arcko@zm.mes>            | 958-417-3516  |
-| Tony Toy         | <fzonb@aqwnml.zmq>        | 372-259-2541  |
-| Akilah Stracke   | <gskeqcr@pnh.lme>         | 367-178-8356  |
-| Buster Howell    | <hfgujq@w.kbi>            | 932-234-9521  |
+| name             | email                     | phone\_number  |
+|:-----------------|:--------------------------|:---------------|
+| Linnie Heathcote | <lrjhqeoc@gdfbosptiz.vpy> | (735)-873-4857 |
+| Ashley Harris    | <zpfc@mxo.zsi>            | (683)-284-8265 |
+| Tad Kozey        | <arcko@zm.mes>            | (958)-417-3516 |
+| Tony Toy         | <fzonb@aqwnml.zmq>        | (372)-259-2541 |
+| Akilah Stracke   | <gskeqcr@pnh.lme>         | (367)-178-8356 |
+| Buster Howell    | <hfgujq@w.kbi>            | (932)-234-9521 |
 
 ### Detect data containing PII
 
@@ -76,7 +76,6 @@ detect(ashley_madison)
 #> Testing column: email
 #> E-mail addresses possibly detected.
 #> Testing column: phone_number
-#> Phone numbers possibly detected.
 #> [1] TRUE
 ```
 
@@ -92,9 +91,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| c44f91b6 | bdadef87 | 8cad6138      |
-| d1e54457 | 11127bba | 8ee8fcec      |
-| a7583c93 | 2c7ab646 | 692092bd      |
-| c2794502 | 311d8596 | 3fb3fb83      |
-| 618734da | 36de9a41 | c4419125      |
-| 900161ac | 3ab8e32b | e9a0f7a       |
+| c44f91b6 | bdadef87 | 1a8f6fec      |
+| d1e54457 | 11127bba | b5bf6b80      |
+| a7583c93 | 2c7ab646 | a20e9ffd      |
+| c2794502 | 311d8596 | 224f4330      |
+| 618734da | 36de9a41 | c1b8b8d3      |
+| 900161ac | 3ab8e32b | 7f48a3c9      |
