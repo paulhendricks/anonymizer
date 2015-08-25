@@ -55,9 +55,9 @@ library(detector)
 library(anonymizer)
 
 set.seed(1)
-letters
-letters %>% salt
-letters %>% salt %>% anonymize(.algo = "crc32")
+letters %>% head
+letters %>% head %>% salt
+letters %>% head %>% salt %>% anonymize(.algo = "crc32")
 ```
 
 ### Generate data containing PII

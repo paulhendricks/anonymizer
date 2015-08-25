@@ -38,22 +38,13 @@ library(detector)
 library(anonymizer)
 
 set.seed(1)
-letters
-#>  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
-#> [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
-letters %>% salt
-#>  [1] "gjoxfagjoxf" "xyrqbbxyrqb" "ferjucferju" "mszjudmszju" "yfqdgeyfqdg"
-#>  [6] "kajwifkajwi" "mpmevgmpmev" "rucskhrucsk" "vquonivquon" "uamtsjuamts"
-#> [11] "mwlgbkmwlgb" "cinrklcinrk" "xhliqmxhliq" "gmtcwngmtcw" "ivjimoivjim"
-#> [16] "xwkuypxwkuy" "lskitqlskit" "fsdgdrfsdgd" "gbqwusgbqwu" "ulkvptulkvp"
-#> [21] "rjhzqurjhzq" "fdmypvfdmyp" "ztjldwztjld" "asclqxasclq" "zmmetyzmmet"
-#> [26] "lnffpzlnffp"
-letters %>% salt %>% anonymize(.algo = "crc32")
-#>  [1] "ab686334" "e9791404" "f9e449"   "c5b7b7"   "331ed28b" "c647a092"
-#>  [7] "104a0a9b" "21f1f110" "8a843efa" "b592abb4" "754fb1cc" "c1275589"
-#> [13] "96623d06" "b71bef6a" "cf03cd4"  "6153a7c3" "802c9765" "f4eced95"
-#> [19] "9aba9b02" "530e32bf" "786baed8" "ead5b838" "784bc09a" "40ae80a" 
-#> [25] "62f6f70b" "ecd33510"
+letters %>% head
+#> [1] "a" "b" "c" "d" "e" "f"
+letters %>% head %>% salt
+#> [1] "gjoxfagjoxf" "xyrqbbxyrqb" "ferjucferju" "mszjudmszju" "yfqdgeyfqdg"
+#> [6] "kajwifkajwi"
+letters %>% head %>% salt %>% anonymize(.algo = "crc32")
+#> [1] "5877c483" "d1b55731" "f17920d3" "ad4cbf5c" "530cd27e" "73a77c84"
 ```
 
 ### Generate data containing PII
@@ -68,14 +59,14 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name             | email                      | phone\_number |
-|:-----------------|:---------------------------|:--------------|
-| Bernadine Hoeger | <anvib@dizxevcs.imq>       | 824-458-9285  |
-| Howard Cummings  | <b@yq.cml>                 | 817-297-5234  |
-| Brenton Grimes   | <eubj@deuqfkbgrx.rhj>      | 392-627-9863  |
-| Nora Dicki       | <yusgqzfhob@jldnvuxkg.rgl> | 817-936-8643  |
-| Kellie Gaylord   | <sm@btkw.hvb>              | 368-458-2381  |
-| Bernie Davis     | <ciugmrbnv@mknvf.fki>      | 978-913-5169  |
+| name             | email                     | phone\_number |
+|:-----------------|:--------------------------|:--------------|
+| Linnie Heathcote | <lrjhqeoc@gdfbosptiz.vpy> | 735-873-4857  |
+| Ashley Harris    | <zpfc@mxo.zsi>            | 683-284-8265  |
+| Tad Kozey        | <arcko@zm.mes>            | 958-417-3516  |
+| Tony Toy         | <fzonb@aqwnml.zmq>        | 372-259-2541  |
+| Akilah Stracke   | <gskeqcr@pnh.lme>         | 367-178-8356  |
+| Buster Howell    | <hfgujq@w.kbi>            | 932-234-9521  |
 
 ### Detect data containing PII
 
@@ -101,9 +92,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 444381f1 | ceff2fc1 | bcd9f215      |
-| 9de1d486 | 22106a8d | 11994717      |
-| 1c157168 | d0aabc19 | f52f6a69      |
-| 95d84db0 | 3d0a35f1 | 53a26ba9      |
-| a1c6f462 | dad6f01f | d007dec7      |
-| 92145a8c | 1176c244 | edc84ffc      |
+| c44f91b6 | bdadef87 | 8cad6138      |
+| d1e54457 | 11127bba | 8ee8fcec      |
+| a7583c93 | 2c7ab646 | 692092bd      |
+| c2794502 | 311d8596 | 3fb3fb83      |
+| 618734da | 36de9a41 | c4419125      |
+| 900161ac | 3ab8e32b | e9a0f7a       |
