@@ -10,6 +10,8 @@ anonymize(.x, .algo = "sha256", ...)
 \item{.x}{a vector.}
 
 \item{.algo}{the name of the algorithm.}
+
+\item{...}{additional arguments to be based to \code{salt}.}
 }
 \value{
 An anonymized version of the data object.

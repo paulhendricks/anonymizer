@@ -2,7 +2,7 @@
 
 ## Improvements
 
-* None.
+* Added hash function, made anonymize into convenience function that combines salt and hash.
   
 ## Bug fixes
 
