@@ -34,23 +34,21 @@ API
 ``` r
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
-set.seed(1)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
+set.seed(1)
 letters %>% head %>% salt
 #> [1] "gjoxfagjoxf" "xyrqbbxyrqb" "ferjucferju" "mszjudmszju" "yfqdgeyfqdg"
 #> [6] "kajwifkajwi"
-letters %>% head %>% hash
-#> [1] "fb1a678ef965ad4a66c712d2161f20319091cb4e7611e1925df671018c833f72"
-#> [2] "61ba1f136aebcd31977da80fae3afffe18b83691e2aa2c61f948d85085fd8e56"
-#> [3] "2eea4ca3e3a6518aaffdcd5bada74dc92c3e0170ab17f7826aa1d1222f8a1ef5"
-#> [4] "d2aebba0a3c95f6d03acf85bd9d41e602b92675ef4741063ebb2091e064d86cd"
-#> [5] "09cab1873b8f76f0d880aa963a5bd2f7c858af261acbde2a6cdee4ce993a12b3"
-#> [6] "6f1066d075c43d9d362b871d35b6bb0aba94407427e70d2bedb28570ba06ad47"
+set.seed(1)
+letters %>% head %>% hash(.algo = "crc32")
+#> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
+set.seed(1)
 letters %>% head %>% salt %>% hash(.algo = "crc32")
-#> [1] "5877c483" "d1b55731" "f17920d3" "ad4cbf5c" "530cd27e" "73a77c84"
+#> [1] "b0891ad8" "13484fdf" "75541275" "d6a99ed4" "360b9454" "3994cdef"
+set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
-#> [1] "3862858e" "540e8ae4" "d1bbf86"  "27094db1" "33964b76" "38984207"
+#> [1] "b0891ad8" "13484fdf" "75541275" "d6a99ed4" "360b9454" "3994cdef"
 ```
 
 ### Generate data containing fake PII
@@ -67,14 +65,14 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name               | email                   | phone\_number  |
-|:-------------------|:------------------------|:---------------|
-| Erwin Gleichner    | <zsijdaobxk@zmldqj.nfy> | (236)-916-9734 |
-| Edmond Zemlak      | <capvnl@nympzf.gsk>     | (983)-329-5842 |
-| Rosy Murray        | <cv@pnhkldwb.hfg>       | (146)-423-6457 |
-| Fredericka Effertz | <uwjbhpglz@wjyuo.tpv>   | (548)-357-2493 |
-| Fumiko Champlin    | <xmv@es.sxn>            | (247)-784-6412 |
-| Zoraida Krajcik    | <cxgnzryo@gfmz.emn>     | (537)-532-8621 |
+| name               | email                  | phone\_number  |
+|:-------------------|:-----------------------|:---------------|
+| Tory Sauer         | <mvkfbcgj@rkvgywn.gls> | (958)-628-7425 |
+| Lorinda Lowe       | <i@viyktshor.lrj>      | (175)-634-5241 |
+| Ray Leffler        | <frcz@dfbotqpi.kuo>    | (328)-946-8413 |
+| Gil Schaefer       | <hypecks@pyri.lda>     | (735)-873-4857 |
+| Georgann Bahringer | <lqxzkdpi@nf.fon>      | (683)-284-8265 |
+| Tonda Kozey        | <q@y.pom>              | (958)-417-3516 |
 
 ### Detect data containing PII
 
@@ -100,9 +98,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| f3817dc3 | cc750790 | d4b58895      |
-| d081f0b8 | 7d164100 | 39acc497      |
-| aaf0e448 | b27aeb9c | 47740a37      |
-| 745cee43 | f419860e | b54acdb3      |
-| 84568bb3 | a4582a03 | f33d996d      |
-| 910bf193 | 7961f4   | 3d5a7068      |
+| 7ecfd9f9 | 461bf8ef | db63231a      |
+| 8ad23949 | ad5845eb | 7af82f7f      |
+| 117247d4 | 177a830f | 41b68cff      |
+| df847cd  | 50bafa32 | d13a71dc      |
+| 4914340a | 81dc2ea  | 814ed2d1      |
+| d2b9e66a | 639eef62 | db31b549      |

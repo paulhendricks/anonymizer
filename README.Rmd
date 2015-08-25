@@ -51,11 +51,14 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 ```{r}
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
-set.seed(1)
 letters %>% head
+set.seed(1)
 letters %>% head %>% salt
-letters %>% head %>% hash
+set.seed(1)
+letters %>% head %>% hash(.algo = "crc32")
+set.seed(1)
 letters %>% head %>% salt %>% hash(.algo = "crc32")
+set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
 ```
 
