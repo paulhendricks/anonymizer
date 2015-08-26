@@ -31,6 +31,8 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 API
 ---
 
+`anonymzer` employs three convenience functions: `salt`, `hash`, and `anonymize`.
+
 ``` r
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
