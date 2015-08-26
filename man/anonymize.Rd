@@ -18,9 +18,15 @@ anonymize(.x, .algo = "sha256", .chars = letters, .n_chars = 5L, ...)
 \item{...}{additional arguments to be based to \code{hash}.}
 }
 \value{
-An anonymized version of the data object.
+An anonymized version of the vector.
 }
 \description{
-Anonymize a vector.
+\code{anonymize} anonymizes a vector \code{.x} by first salting it with
+ \code{\link{salt}} and then hashing it with \code{\link{hash}}. See
+ both functions for additional documentation.
+}
+\examples{
+set.seed(1)
+anonymize(letters)
 }
 

@@ -13,7 +13,16 @@ hash(.x, .algo = "sha256", ...)
 
 \item{...}{additional arguments to be based to \code{\link[digest]{digest}}.}
 }
+\value{
+A hashed version of the vector.
+}
 \description{
 See \code{\link[digest]{digest}} for additional documentation.
+}
+\examples{
+# All algorithms available to digest::digest are available here
+set.seed(1)
+hash(letters, .algo = "sha256")
+hash(letters, .algo = "crc32")
 }
 
