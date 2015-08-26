@@ -17,7 +17,12 @@ salt(.x, .chars = letters, .n_chars = 5L)
 A salted version of the vector.
 }
 \description{
-Salt a vector.
+\code{salt} takes a vector \code{.x} and returns a salted version of it.
+The algorithm for salting a vector is:
+\enumerate{
+  \item Select a random sample of characters of length \code{.n_chars} from \code{.chars}. Call this random sample \code{.y}.
+  \item Concatenate \code{.y}, the vector \code{.x}, and \code{.y} again in a vectorized fashion.
+}
 }
 \examples{
 set.seed(1)

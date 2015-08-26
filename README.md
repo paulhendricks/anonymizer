@@ -40,17 +40,17 @@ letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
 set.seed(1)
 letters %>% head %>% salt
-#> [1] "gjoxfagjoxf" "xyrqbbxyrqb" "ferjucferju" "mszjudmszju" "yfqdgeyfqdg"
-#> [6] "kajwifkajwi"
+#> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
+#> [6] "gjoxffgjoxf"
 set.seed(1)
 letters %>% head %>% hash(.algo = "crc32")
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
 set.seed(1)
 letters %>% head %>% salt %>% hash(.algo = "crc32")
-#> [1] "b0891ad8" "13484fdf" "75541275" "d6a99ed4" "360b9454" "3994cdef"
+#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
-#> [1] "b0891ad8" "13484fdf" "75541275" "d6a99ed4" "360b9454" "3994cdef"
+#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 ```
 
 Generate data containing fake PII
@@ -68,14 +68,14 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name               | email                  | phone\_number  |
-|:-------------------|:-----------------------|:---------------|
-| Tory Sauer         | <mvkfbcgj@rkvgywn.gls> | (958)-628-7425 |
-| Lorinda Lowe       | <i@viyktshor.lrj>      | (175)-634-5241 |
-| Ray Leffler        | <frcz@dfbotqpi.kuo>    | (328)-946-8413 |
-| Gil Schaefer       | <hypecks@pyri.lda>     | (735)-873-4857 |
-| Georgann Bahringer | <lqxzkdpi@nf.fon>      | (683)-284-8265 |
-| Tonda Kozey        | <q@y.pom>              | (958)-417-3516 |
+| name              | email                | phone\_number  |
+|:------------------|:---------------------|:---------------|
+| Jaimie Zemlak     | <ka@jvi.mol>         | (714)-684-5263 |
+| Thi Hodkiewicz    | <rt@csjyoqlkv.alr>   | (528)-651-1674 |
+| Christene Sanford | <wkfbcgy@rkvgy.iqg>  | (657)-569-3968 |
+| Melvin Watsica    | <cvith@ilvtzqwx.sjh> | (261)-854-3482 |
+| Franklin Ebert    | <sdfyxbmq@utk.kuo>   | (512)-237-5783 |
+| Eugenio O'Conner  | <hypecks@pyri.lda>   | (136)-468-8436 |
 
 Detect data containing PII
 --------------------------
@@ -103,9 +103,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 7ecfd9f9 | 461bf8ef | db63231a      |
-| 8ad23949 | ad5845eb | 7af82f7f      |
-| 117247d4 | 177a830f | 41b68cff      |
-| df847cd  | 50bafa32 | d13a71dc      |
-| 4914340a | 81dc2ea  | 814ed2d1      |
-| d2b9e66a | 639eef62 | db31b549      |
+| 2620d129 | c7a96e57 | 512e8ba3      |
+| c6db1e6c | e2dc0e00 | 2d6ea13a      |
+| a46bfe18 | 1f67fd17 | 3f64c9b7      |
+| 11631623 | db67e50b | a5409eb2      |
+| e7b2535c | c7ded7bc | 377d5464      |
+| 3a424efd | c7b812c4 | ba6c26d4      |

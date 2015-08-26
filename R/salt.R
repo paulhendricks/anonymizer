@@ -1,5 +1,12 @@
 #' Salt a vector.
 #'
+#' \code{salt} takes a vector \code{.x} and returns a salted version of it.
+#' The algorithm for salting a vector is:
+#' \enumerate{
+#'   \item Select a random sample of characters of length \code{.n_chars} from \code{.chars}. Call this random sample \code{.y}.
+#'   \item Concatenate \code{.y}, the vector \code{.x}, and \code{.y} again in a vectorized fashion.
+#' }
+#'
 #' @param .x a vector.
 #' @param .chars set of characters to salt with.
 #' @param .n_chars an integer; number of characters to salt with.
@@ -17,6 +24,6 @@
 #' @export
 salt <- function(.x, .chars = letters, .n_chars = 5L) {
   if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
-  .y <- replicate(length(.x), paste0(sample(.chars, .n_chars, replace = TRUE), collapse = ""))
+  .y <- paste0(sample(.chars, .n_chars, replace = TRUE), collapse = "")
   return(paste0(.y, .x, .y, sep = ""))
 }
