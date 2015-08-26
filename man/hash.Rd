@@ -19,6 +19,9 @@ A hashed version of the vector.
 \description{
 See \code{\link[digest]{digest}} for additional documentation.
 }
+\details{
+The user is advised to check out \href{https://en.wikipedia.org/wiki/Hash_function}{Wikipedia} for more information.
+}
 \examples{
 # All algorithms available to digest::digest are available here
 set.seed(1)

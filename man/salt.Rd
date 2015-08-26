@@ -24,6 +24,9 @@ The algorithm for salting a vector is:
   \item Concatenate \code{.y}, the vector \code{.x}, and \code{.y} again in a vectorized fashion.
 }
 }
+\details{
+The user is advised to check out \href{https://en.wikipedia.org/wiki/Salt_\%28cryptography\%29}{Wikipedia} for more information.
+}
 \examples{
 set.seed(1)
 # Use various number of characters

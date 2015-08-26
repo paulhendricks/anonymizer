@@ -7,6 +7,8 @@
 #'   \item Concatenate \code{.y}, the vector \code{.x}, and \code{.y} again in a vectorized fashion.
 #' }
 #'
+#' The user is advised to check out \href{https://en.wikipedia.org/wiki/Salt_\%28cryptography\%29}{Wikipedia} for more information.
+#'
 #' @param .x a vector.
 #' @param .chars set of characters to salt with.
 #' @param .n_chars an integer; number of characters to salt with.

@@ -25,6 +25,9 @@ An anonymized version of the vector.
  \code{\link{salt}} and then hashing it with \code{\link{hash}}. See
  both functions for additional documentation.
 }
+\details{
+The user is advised to check out \href{https://en.wikipedia.org/wiki/Data_anonymization}{Wikipedia} for more information.
+}
 \examples{
 set.seed(1)
 anonymize(letters)

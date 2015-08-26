@@ -2,6 +2,8 @@
 #'
 #' See \code{\link[digest]{digest}} for additional documentation.
 #'
+#' The user is advised to check out \href{https://en.wikipedia.org/wiki/Hash_function}{Wikipedia} for more information.
+#'
 #' @param .x a vector.
 #' @param .algo the name of the algorithm.
 #' @param ... additional arguments to be based to \code{\link[digest]{digest}}.

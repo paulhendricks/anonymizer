@@ -4,6 +4,8 @@
 #'  \code{\link{salt}} and then hashing it with \code{\link{hash}}. See
 #'  both functions for additional documentation.
 #'
+#' The user is advised to check out \href{https://en.wikipedia.org/wiki/Data_anonymization}{Wikipedia} for more information.
+#'
 #' @param .x a vector.
 #' @param .algo the name of the algorithm.
 #' @param .chars set of characters to salt with.
