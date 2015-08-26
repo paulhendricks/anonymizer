@@ -16,8 +16,5 @@
 #' @export
 hash <- function(.x, .algo = "sha256", ...){
   if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
-  unq_hashes <- vapply(unique(.x),
-                       function(object) digest::digest(object, algo = .algo, ...),
-                       character(1))
-  return(unname(unq_hashes[.x]))
+  return(unname(vapply(.x, function(object) digest::digest(object, algo = .algo, ...), character(1))))
 }
