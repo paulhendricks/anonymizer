@@ -63,7 +63,7 @@ ashley_madison <-
   data.frame(name = r_full_names(n), 
              email = r_email_addresses(n), 
              phone_number = r_phone_numbers(n, use_hyphens = TRUE, 
-                                            use_parentheses = TRUE), 
+                                            use_spaces = TRUE), 
              stringsAsFactors = FALSE)
 ashley_madison %>% 
   knitr::kable(format = "markdown")
@@ -71,12 +71,12 @@ ashley_madison %>%
 
 | name              | email                | phone\_number  |
 |:------------------|:---------------------|:---------------|
-| Jaimie Zemlak     | <ka@jvi.mol>         | (714)-684-5263 |
-| Thi Hodkiewicz    | <rt@csjyoqlkv.alr>   | (528)-651-1674 |
-| Christene Sanford | <wkfbcgy@rkvgy.iqg>  | (657)-569-3968 |
-| Melvin Watsica    | <cvith@ilvtzqwx.sjh> | (261)-854-3482 |
-| Franklin Ebert    | <sdfyxbmq@utk.kuo>   | (512)-237-5783 |
-| Eugenio O'Conner  | <hypecks@pyri.lda>   | (136)-468-8436 |
+| Jaimie Zemlak     | <ka@jvi.mol>         | 714- 684- 5263 |
+| Thi Hodkiewicz    | <rt@csjyoqlkv.alr>   | 528- 651- 1674 |
+| Christene Sanford | <wkfbcgy@rkvgy.iqg>  | 657- 569- 3968 |
+| Melvin Watsica    | <cvith@ilvtzqwx.sjh> | 261- 854- 3482 |
+| Franklin Ebert    | <sdfyxbmq@utk.kuo>   | 512- 237- 5783 |
+| Eugenio O'Conner  | <hypecks@pyri.lda>   | 136- 468- 8436 |
 
 Detect data containing PII
 --------------------------
@@ -92,7 +92,7 @@ ashley_madison %>%
 |:--------------|:----------------------|:--------------------|:---------------------------------------|
 | name          | FALSE                 | FALSE               | FALSE                                  |
 | email         | TRUE                  | FALSE               | FALSE                                  |
-| phone\_number | FALSE                 | FALSE               | FALSE                                  |
+| phone\_number | FALSE                 | TRUE                | FALSE                                  |
 
 Anonymize data containing PII
 -----------------------------
@@ -107,9 +107,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 2620d129 | c7a96e57 | 512e8ba3      |
-| c6db1e6c | e2dc0e00 | 2d6ea13a      |
-| a46bfe18 | 1f67fd17 | 3f64c9b7      |
-| 11631623 | db67e50b | a5409eb2      |
-| e7b2535c | c7ded7bc | 377d5464      |
-| 3a424efd | c7b812c4 | ba6c26d4      |
+| 2620d129 | c7a96e57 | 402c660f      |
+| c6db1e6c | e2dc0e00 | f65da659      |
+| a46bfe18 | 1f67fd17 | 9363d74f      |
+| 11631623 | db67e50b | c987e056      |
+| e7b2535c | c7ded7bc | 2884087       |
+| 3a424efd | c7b812c4 | 274f4300      |
