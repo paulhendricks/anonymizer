@@ -65,7 +65,8 @@ ashley_madison <-
              phone_number = r_phone_numbers(n, use_hyphens = TRUE, 
                                             use_parentheses = TRUE), 
              stringsAsFactors = FALSE)
-knitr::kable(ashley_madison, format = "markdown")
+ashley_madison %>% 
+  knitr::kable(format = "markdown")
 ```
 
 | name              | email                | phone\_number  |
@@ -82,13 +83,16 @@ Detect data containing PII
 
 ``` r
 library(detector)
-detect(ashley_madison)
-#> Testing column: name
-#> Testing column: email
-#> E-mail addresses possibly detected.
-#> Testing column: phone_number
-#> [1] TRUE
+ashley_madison %>% 
+  detect %>% 
+  knitr::kable(format = "markdown")
 ```
+
+| column\_name  | has\_email\_addresses | has\_phone\_numbers | has\_national\_identification\_numbers |
+|:--------------|:----------------------|:--------------------|:---------------------------------------|
+| name          | FALSE                 | FALSE               | FALSE                                  |
+| email         | TRUE                  | FALSE               | FALSE                                  |
+| phone\_number | FALSE                 | FALSE               | FALSE                                  |
 
 Anonymize data containing PII
 -----------------------------

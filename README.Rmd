@@ -75,14 +75,17 @@ ashley_madison <-
              phone_number = r_phone_numbers(n, use_hyphens = TRUE, 
                                             use_parentheses = TRUE), 
              stringsAsFactors = FALSE)
-knitr::kable(ashley_madison, format = "markdown")
+ashley_madison %>% 
+  knitr::kable(format = "markdown")
 ```
 
 ## Detect data containing PII
 
 ```{r}
 library(detector)
-detect(ashley_madison)
+ashley_madison %>% 
+  detect %>% 
+  knitr::kable(format = "markdown")
 ```
 
 ## Anonymize data containing PII
