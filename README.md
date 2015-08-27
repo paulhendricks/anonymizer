@@ -53,8 +53,7 @@ letters %>% head %>% anonymize(.algo = "crc32")
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 ```
 
-Generate data containing fake PII
----------------------------------
+### Generate data containing fake PII
 
 ``` r
 library(generator)
@@ -78,8 +77,7 @@ ashley_madison %>%
 | Franklin Ebert    | <sdfyxbmq@utk.kuo>   | 512- 237- 5783 |
 | Eugenio O'Conner  | <hypecks@pyri.lda>   | 136- 468- 8436 |
 
-Detect data containing PII
---------------------------
+### Detect data containing PII
 
 ``` r
 library(detector)
@@ -94,8 +92,7 @@ ashley_madison %>%
 | email         | TRUE                  | FALSE               | FALSE                                  |
 | phone\_number | FALSE                 | TRUE                | FALSE                                  |
 
-Anonymize data containing PII
------------------------------
+### Anonymize data containing PII
 
 ``` r
 ashley_madison %>% 

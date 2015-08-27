@@ -64,7 +64,7 @@ set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
 ```
 
-## Generate data containing fake PII
+### Generate data containing fake PII
 
 ```{r}
 library(generator)
@@ -79,7 +79,7 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-## Detect data containing PII
+### Detect data containing PII
 
 ```{r}
 library(detector)
@@ -88,7 +88,7 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-## Anonymize data containing PII
+### Anonymize data containing PII
 
 ```{r}
 ashley_madison %>% 
