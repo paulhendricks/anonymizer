@@ -36,7 +36,6 @@ API
 ``` r
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
-set.seed(1)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
 letters %>% head %>% salt(.seed = 1)
@@ -46,13 +45,17 @@ letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 #> [1] 1
 letters %>% head %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
-letters %>% head %>% hash(.algo = "crc32", .seed = 1) %>% unhash(.algo = "crc32", .seed = 1)
+letters %>% head %>% 
+  hash(.algo = "crc32", .seed = 1) %>% 
+  unhash(.algo = "crc32", .seed = 1)
 #> [1] 1
 letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
-letters %>% head %>% anonymize(.algo = "crc32", .seed = 1) %>% deanonymize(.algo = "crc32", .seed = 1)
+letters %>% head %>% 
+  anonymize(.algo = "crc32", .seed = 1) %>% 
+  deanonymize(.algo = "crc32", .seed = 1)
 #> [1] 1
 ```
 
@@ -60,6 +63,7 @@ letters %>% head %>% anonymize(.algo = "crc32", .seed = 1) %>% deanonymize(.algo
 
 ``` r
 library(generator)
+set.seed(1)
 n <- 6
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
@@ -71,14 +75,14 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-| name              | email                | phone\_number  |
-|:------------------|:---------------------|:---------------|
-| Jaimie Zemlak     | <ka@jvi.mol>         | 714- 684- 5263 |
-| Thi Hodkiewicz    | <rt@csjyoqlkv.alr>   | 528- 651- 1674 |
-| Christene Sanford | <wkfbcgy@rkvgy.iqg>  | 657- 569- 3968 |
-| Melvin Watsica    | <cvith@ilvtzqwx.sjh> | 261- 854- 3482 |
-| Franklin Ebert    | <sdfyxbmq@utk.kuo>   | 512- 237- 5783 |
-| Eugenio O'Conner  | <hypecks@pyri.lda>   | 136- 468- 8436 |
+| name                  | email                     | phone\_number  |
+|:----------------------|:--------------------------|:---------------|
+| Eldridge Pfannerstill | <yfpc@gjaithyl.met>       | 421- 714- 6843 |
+| Augustine Homenick    | <csjyoql@ntakqojv.lgb>    | 274- 528- 6517 |
+| Jennie Runte          | <n@rkvg.lip>              | 685- 657- 5692 |
+| Araceli Kunde         | <tcv@iuzhk.xvj>           | 364- 261- 8542 |
+| Josue Rau             | <lrjhqeoc@gdfbosptiz.vpy> | 592- 512- 2378 |
+| Elnora Zemlak         | <zpfc@mxo.zsi>            | 893- 136- 4687 |
 
 ### Detect data containing PII
 
@@ -99,17 +103,17 @@ ashley_madison %>%
 
 ``` r
 ashley_madison %>% 
-  mutate(name = anonymize(name, .algo = "crc32"), 
-         email = anonymize(email, .algo = "crc32"), 
-         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
+  mutate(name = anonymize(name, .algo = "crc32", .seed = 1), 
+         email = anonymize(email, .algo = "crc32", .seed = 1), 
+         phone_number = anonymize(phone_number, .algo = "crc32", .seed = 1)) %>% 
   knitr::kable(format = "markdown")
 ```
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| f34e9bd5 | a2795b9f | cbcd7620      |
-| 587c4a80 | 2f8c88ee | 7dbcb676      |
-| bd22f185 | 11c532dd | 1882c760      |
-| 8fc442cf | e9053c59 | 4266f079      |
-| 791507b0 | a8e5152  | 896950a8      |
-| 9d4a790  | ae8942a  | acae532f      |
+| 6e557a48 | bba0f582 | 2d3a47ee      |
+| e818a264 | 518f7f6  | abb05c14      |
+| 685ed40  | afc10b09 | 94a766dd      |
+| c335a390 | 4c48c731 | 61eaf5ec      |
+| 4366c250 | 9a7fa137 | 16f2915       |
+| cc7830c7 | c7e0516  | f7f0c694      |
