@@ -31,7 +31,7 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 API
 ---
 
-`anonymzer` employs six convenience functions: `salt`, `unsalt`, `hash`, `unhash`, `anonymize`, and `deanonymize`.
+`anonymzer` employs six convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
 
 ``` r
 library(dplyr, warn.conflicts = FALSE)
@@ -45,18 +45,10 @@ letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 #> [1] 1
 letters %>% head %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
-letters %>% head %>% 
-  hash(.algo = "crc32", .seed = 1) %>% 
-  unhash(.algo = "crc32", .seed = 1)
-#> [1] 1
 letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
-letters %>% head %>% 
-  anonymize(.algo = "crc32", .seed = 1) %>% 
-  deanonymize(.algo = "crc32", .seed = 1)
-#> [1] 1
 ```
 
 ### Generate data containing fake PII

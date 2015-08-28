@@ -48,7 +48,7 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 
 ## API
 
-`anonymzer` employs six convenience functions: `salt`, `unsalt`, `hash`, `unhash`, `anonymize`, and `deanonymize`.
+`anonymzer` employs six convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE)
@@ -57,14 +57,8 @@ letters %>% head
 letters %>% head %>% salt(.seed = 1)
 letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 letters %>% head %>% hash(.algo = "crc32", .seed = 1)
-letters %>% head %>% 
-  hash(.algo = "crc32", .seed = 1) %>% 
-  unhash(.algo = "crc32", .seed = 1)
 letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
 letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
-letters %>% head %>% 
-  anonymize(.algo = "crc32", .seed = 1) %>% 
-  deanonymize(.algo = "crc32", .seed = 1)
 ```
 
 ### Generate data containing fake PII
