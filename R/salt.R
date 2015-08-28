@@ -15,7 +15,6 @@
 #' @param .n_chars an integer; number of characters to salt with.
 #' @return A salted version of the vector.
 #' @examples
-#' set.seed(1)
 #' # Use various number of characters
 #' salt(letters, .n_chars = 0L)
 #' salt(letters, .n_chars = 1L)

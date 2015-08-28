@@ -30,7 +30,6 @@ The algorithm for salting a vector is:
 The user is advised to check out \href{https://en.wikipedia.org/wiki/Salt_\%28cryptography\%29}{Wikipedia} for more information.
 }
 \examples{
-set.seed(1)
 # Use various number of characters
 salt(letters, .n_chars = 0L)
 salt(letters, .n_chars = 1L)
