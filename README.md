@@ -55,26 +55,30 @@ letters %>% head %>% anonymize(.algo = "crc32")
 
 ``` r
 library(generator)
-set.seed(1)
 n <- 6
+set.seed(1)
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
+             snn = r_national_identification_numbers(n), 
+             dob = r_date_of_births(n), 
              email = r_email_addresses(n), 
-             phone_number = r_phone_numbers(n, use_hyphens = TRUE, 
-                                            use_spaces = TRUE), 
+             ip = r_ipv4_addresses(n), 
+             phone = r_phone_numbers(n), 
+             credit_card = r_credit_card_numbers(n), 
+             lat = r_latitudes(n), 
+             lon = r_longitudes(n), 
              stringsAsFactors = FALSE)
-ashley_madison %>% 
-  knitr::kable(format = "markdown")
+knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name                  | email                     | phone\_number  |
-|:----------------------|:--------------------------|:---------------|
-| Eldridge Pfannerstill | <yfpc@gjaithyl.met>       | 421- 714- 6843 |
-| Augustine Homenick    | <csjyoql@ntakqojv.lgb>    | 274- 528- 6517 |
-| Jennie Runte          | <n@rkvg.lip>              | 685- 657- 5692 |
-| Araceli Kunde         | <tcv@iuzhk.xvj>           | 364- 261- 8542 |
-| Josue Rau             | <lrjhqeoc@gdfbosptiz.vpy> | 592- 512- 2378 |
-| Elnora Zemlak         | <zpfc@mxo.zsi>            | 893- 136- 4687 |
+| name                  | snn         | dob        | email                    | ip              | phone      | credit\_card        |          lat|          lon|
+|:----------------------|:------------|:-----------|:-------------------------|:----------------|:-----------|:--------------------|------------:|------------:|
+| Eldridge Pfannerstill | 442-34-5338 | 1991-11-11 | <ntakqojv@lgbcyk.rkv>    | 45.84.71.225    | 6794976958 | 4125-7204-9193-5140 |   -2.7018575|     8.634988|
+| Augustine Homenick    | 799-44-6396 | 1912-06-27 | <iqg@mtcuh.viy>          | 191.116.55.106  | 3275827694 | 2182-5994-2283-9486 |  -70.4148630|   -65.827918|
+| Jennie Runte          | 941-11-5441 | 1983-09-13 | <wjszy@sjhreocvt.gbp>    | 27.128.73.17    | 7419351735 | 4370-4866-4735-7857 |  -45.4091701|   -79.932229|
+| Araceli Kunde         | 290-44-2675 | 1947-07-26 | <uljsnvhfr@qfdkumtn.jkd> | 221.47.229.86   | 3243246285 | 6682-5074-2898-9396 |   -0.2673845|   103.514583|
+| Josue Rau             | 686-88-8446 | 1994-12-10 | <c@lqxzkdpi.nfy>         | 157.136.114.185 | 9169736873 | 4510-3757-4858-5236 |  -22.8839925|    72.886505|
+| Elnora Zemlak         | 212-40-7016 | 1974-10-30 | <capvnl@nympzf.gsk>      | 143.20.199.87   | 3295843196 | 7206-6205-2194-6432 |   78.2444466|  -120.590050|
 
 ### Detect data containing PII
 
@@ -85,27 +89,31 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-| column\_name  | has\_email\_addresses | has\_phone\_numbers | has\_national\_identification\_numbers |
-|:--------------|:----------------------|:--------------------|:---------------------------------------|
-| name          | FALSE                 | FALSE               | FALSE                                  |
-| email         | TRUE                  | FALSE               | FALSE                                  |
-| phone\_number | FALSE                 | TRUE                | FALSE                                  |
+| column\_name | has\_email\_addresses | has\_phone\_numbers | has\_national\_identification\_numbers |
+|:-------------|:----------------------|:--------------------|:---------------------------------------|
+| name         | FALSE                 | FALSE               | FALSE                                  |
+| snn          | FALSE                 | FALSE               | TRUE                                   |
+| dob          | FALSE                 | FALSE               | FALSE                                  |
+| email        | TRUE                  | FALSE               | FALSE                                  |
+| ip           | FALSE                 | FALSE               | FALSE                                  |
+| phone        | FALSE                 | TRUE                | FALSE                                  |
+| credit\_card | FALSE                 | FALSE               | FALSE                                  |
+| lat          | FALSE                 | TRUE                | FALSE                                  |
+| lon          | FALSE                 | TRUE                | FALSE                                  |
 
 ### Anonymize data containing PII
 
 ``` r
+ashley_madison[] <- lapply(ashley_madison, anonymize, .algo = "crc32")
 ashley_madison %>% 
-  mutate(name = anonymize(name, .algo = "crc32"), 
-         email = anonymize(email, .algo = "crc32"), 
-         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```
 
-| name     | email    | phone\_number |
-|:---------|:---------|:--------------|
-| c83b4030 | 78fa5511 | 53fb1bdd      |
-| 98a6974d | c0eeeec5 | d5710027      |
-| 77dcbc4d | f8b2af46 | ea663aee      |
-| a48e2b0b | 2bf34faa | 1f2ba9df      |
-| 4fecaeb2 | 6c961f50 | 7fae7526      |
-| abc3b85c | 7d27541b | 89319aa7      |
+| name     | snn      | dob      | email    | ip       | phone    | credit\_card | lat      | lon      |
+|:---------|:---------|:---------|:---------|:---------|:---------|:-------------|:---------|:---------|
+| c83b4030 | 393d73d7 | 4777c52c | aa5dead  | e4b6e2c6 | d3af086b | cb7b5ba      | 80064d9e | 7dc18006 |
+| 98a6974d | 70ac65b0 | 6f83bc6  | a75947f0 | 5e0e7cef | 5c562036 | 7cd11025     | fdf9526d | 5828b961 |
+| 77dcbc4d | 391740d7 | 6f08ea1b | 6cefaee2 | fbaaa8f1 | 9a66f57d | 299a42fe     | 734886e3 | 9ea0e9a5 |
+| a48e2b0b | 6704117d | 5f533823 | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
+| 4fecaeb2 | 9d6bf732 | 2d055d5c | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
+| abc3b85c | 90866189 | 6e8a6843 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |

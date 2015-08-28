@@ -65,16 +65,20 @@ letters %>% head %>% anonymize(.algo = "crc32")
 
 ```{r}
 library(generator)
-set.seed(1)
 n <- 6
+set.seed(1)
 ashley_madison <- 
   data.frame(name = r_full_names(n), 
+             snn = r_national_identification_numbers(n), 
+             dob = r_date_of_births(n), 
              email = r_email_addresses(n), 
-             phone_number = r_phone_numbers(n, use_hyphens = TRUE, 
-                                            use_spaces = TRUE), 
+             ip = r_ipv4_addresses(n), 
+             phone = r_phone_numbers(n), 
+             credit_card = r_credit_card_numbers(n), 
+             lat = r_latitudes(n), 
+             lon = r_longitudes(n), 
              stringsAsFactors = FALSE)
-ashley_madison %>% 
-  knitr::kable(format = "markdown")
+knitr::kable(ashley_madison, format = "markdown")
 ```
 
 ### Detect data containing PII
@@ -89,9 +93,7 @@ ashley_madison %>%
 ### Anonymize data containing PII
 
 ```{r}
+ashley_madison[] <- lapply(ashley_madison, anonymize, .algo = "crc32")
 ashley_madison %>% 
-  mutate(name = anonymize(name, .algo = "crc32"), 
-         email = anonymize(email, .algo = "crc32"), 
-         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```
