@@ -38,17 +38,17 @@ library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
-letters %>% head %>% salt(.seed = 1)
-#> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
-#> [6] "gjoxffgjoxf"
-letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
+letters %>% head %>% salt
+#> [1] "xgjoxaxgjox" "xgjoxbxgjox" "xgjoxcxgjox" "xgjoxdxgjox" "xgjoxexgjox"
+#> [6] "xgjoxfxgjox"
+letters %>% head %>% salt %>% unsalt
 #> [1] "a" "b" "c" "d" "e" "f"
-letters %>% head %>% hash(.algo = "crc32", .seed = 1)
+letters %>% head %>% hash(.algo = "crc32")
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
-letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
-#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
-letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
-#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
+letters %>% head %>% salt %>% hash(.algo = "crc32")
+#> [1] "9aec981b" "1c78eab5" "d7243910" "ca2109a8" "17dda0d"  "87e9a8a3"
+letters %>% head %>% anonymize(.algo = "crc32")
+#> [1] "9aec981b" "1c78eab5" "d7243910" "ca2109a8" "17dda0d"  "87e9a8a3"
 ```
 
 ### Generate data containing fake PII
@@ -95,17 +95,17 @@ ashley_madison %>%
 
 ``` r
 ashley_madison %>% 
-  mutate(name = anonymize(name, .algo = "crc32", .seed = 1), 
-         email = anonymize(email, .algo = "crc32", .seed = 1), 
-         phone_number = anonymize(phone_number, .algo = "crc32", .seed = 1)) %>% 
+  mutate(name = anonymize(name, .algo = "crc32"), 
+         email = anonymize(email, .algo = "crc32"), 
+         phone_number = anonymize(phone_number, .algo = "crc32")) %>% 
   knitr::kable(format = "markdown")
 ```
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 6e557a48 | bba0f582 | 2d3a47ee      |
-| e818a264 | 518f7f6  | abb05c14      |
-| 685ed40  | afc10b09 | 94a766dd      |
-| c335a390 | 4c48c731 | 61eaf5ec      |
-| 4366c250 | 9a7fa137 | 16f2915       |
-| cc7830c7 | c7e0516  | f7f0c694      |
+| c83b4030 | 78fa5511 | 53fb1bdd      |
+| 98a6974d | c0eeeec5 | d5710027      |
+| 77dcbc4d | f8b2af46 | ea663aee      |
+| a48e2b0b | 2bf34faa | 1f2ba9df      |
+| 4fecaeb2 | 6c961f50 | 7fae7526      |
+| abc3b85c | 7d27541b | 89319aa7      |
