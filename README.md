@@ -36,29 +36,23 @@ API
 ``` r
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
+set.seed(1)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
-set.seed(1)
-letters %>% head %>% salt
+letters %>% head %>% salt(.seed = 1)
 #> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
 #> [6] "gjoxffgjoxf"
-set.seed(1)
-letters %>% head %>% salt %>% unsalt
+letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 #> [1] 1
-set.seed(1)
-letters %>% head %>% hash(.algo = "crc32")
+letters %>% head %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
-set.seed(1)
-letters %>% head %>% hash(.algo = "crc32") %>% unhash()
+letters %>% head %>% hash(.algo = "crc32", .seed = 1) %>% unhash(.algo = "crc32", .seed = 1)
 #> [1] 1
-set.seed(1)
-letters %>% head %>% salt %>% hash(.algo = "crc32")
+letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
-set.seed(1)
-letters %>% head %>% anonymize(.algo = "crc32")
+letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
-set.seed(1)
-letters %>% head %>% anonymize(.algo = "crc32") %>% deanonymize()
+letters %>% head %>% anonymize(.algo = "crc32", .seed = 1) %>% deanonymize(.algo = "crc32", .seed = 1)
 #> [1] 1
 ```
 
@@ -113,9 +107,9 @@ ashley_madison %>%
 
 | name     | email    | phone\_number |
 |:---------|:---------|:--------------|
-| 2620d129 | c7a96e57 | 402c660f      |
-| c6db1e6c | e2dc0e00 | f65da659      |
-| a46bfe18 | 1f67fd17 | 9363d74f      |
-| 11631623 | db67e50b | c987e056      |
-| e7b2535c | c7ded7bc | 2884087       |
-| 3a424efd | c7b812c4 | 274f4300      |
+| f34e9bd5 | a2795b9f | cbcd7620      |
+| 587c4a80 | 2f8c88ee | 7dbcb676      |
+| bd22f185 | 11c532dd | 1882c760      |
+| 8fc442cf | e9053c59 | 4266f079      |
+| 791507b0 | a8e5152  | 896950a8      |
+| 9d4a790  | ae8942a  | acae532f      |
