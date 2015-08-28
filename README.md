@@ -43,14 +43,23 @@ letters %>% head %>% salt
 #> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
 #> [6] "gjoxffgjoxf"
 set.seed(1)
+letters %>% head %>% salt %>% unsalt
+#> [1] 1
+set.seed(1)
 letters %>% head %>% hash(.algo = "crc32")
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
+set.seed(1)
+letters %>% head %>% hash(.algo = "crc32") %>% unhash()
+#> [1] 1
 set.seed(1)
 letters %>% head %>% salt %>% hash(.algo = "crc32")
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
 #> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
+set.seed(1)
+letters %>% head %>% anonymize(.algo = "crc32") %>% deanonymize()
+#> [1] 1
 ```
 
 ### Generate data containing fake PII

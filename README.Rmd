@@ -57,11 +57,17 @@ letters %>% head
 set.seed(1)
 letters %>% head %>% salt
 set.seed(1)
+letters %>% head %>% salt %>% unsalt
+set.seed(1)
 letters %>% head %>% hash(.algo = "crc32")
+set.seed(1)
+letters %>% head %>% hash(.algo = "crc32") %>% unhash()
 set.seed(1)
 letters %>% head %>% salt %>% hash(.algo = "crc32")
 set.seed(1)
 letters %>% head %>% anonymize(.algo = "crc32")
+set.seed(1)
+letters %>% head %>% anonymize(.algo = "crc32") %>% deanonymize()
 ```
 
 ### Generate data containing fake PII
