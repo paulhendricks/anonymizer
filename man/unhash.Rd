@@ -4,7 +4,10 @@
 \alias{unhash}
 \title{Unhash a vector.}
 \usage{
-unhash()
+unhash(.x)
+}
+\arguments{
+\item{.x}{a vector.}
 }
 \value{
 An unhashed version of the vector.

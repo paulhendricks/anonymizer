@@ -4,7 +4,10 @@
 \alias{unsalt}
 \title{Unsalt a vector.}
 \usage{
-unsalt()
+unsalt(.x)
+}
+\arguments{
+\item{.x}{a vector.}
 }
 \value{
 An unsalted version of the vector.

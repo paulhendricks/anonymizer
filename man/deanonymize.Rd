@@ -4,7 +4,10 @@
 \alias{deanonymize}
 \title{Deanonymize a vector.}
 \usage{
-deanonymize()
+deanonymize(.x)
+}
+\arguments{
+\item{.x}{a vector.}
 }
 \value{
 An deanonymized version of the vector.
