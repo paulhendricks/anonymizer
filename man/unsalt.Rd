@@ -4,10 +4,12 @@
 \alias{unsalt}
 \title{Unsalt a vector.}
 \usage{
-unsalt(.x)
+unsalt(.x, .seed = 0)
 }
 \arguments{
 \item{.x}{a vector.}
+
+\item{.seed}{an integer to seed the random number generator.}
 }
 \value{
 An unsalted version of the vector.

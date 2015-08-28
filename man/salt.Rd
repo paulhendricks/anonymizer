@@ -4,10 +4,12 @@
 \alias{salt}
 \title{Salt a vector.}
 \usage{
-salt(.x, .chars = letters, .n_chars = 5L)
+salt(.x, .seed = 0, .chars = letters, .n_chars = 5L)
 }
 \arguments{
 \item{.x}{a vector.}
+
+\item{.seed}{an integer to seed the random number generator.}
 
 \item{.chars}{set of characters to salt with.}
 

@@ -10,6 +10,7 @@
 #' The user is advised to check out \href{https://en.wikipedia.org/wiki/Salt_\%28cryptography\%29}{Wikipedia} for more information.
 #'
 #' @param .x a vector.
+#' @param .seed an integer to seed the random number generator.
 #' @param .chars set of characters to salt with.
 #' @param .n_chars an integer; number of characters to salt with.
 #' @return A salted version of the vector.
@@ -24,8 +25,9 @@
 #' # Use other sets of characters to salt with
 #' salt(letters, .chars = letters[1:2])
 #' @export
-salt <- function(.x, .chars = letters, .n_chars = 5L) {
+salt <- function(.x, .seed = 0, .chars = letters, .n_chars = 5L) {
   if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
+  set.seed(.seed)
   .y <- paste0(sample(.chars, .n_chars, replace = TRUE), collapse = "")
   return(paste0(.y, .x, .y, sep = ""))
 }

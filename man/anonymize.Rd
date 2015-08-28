@@ -4,12 +4,15 @@
 \alias{anonymize}
 \title{Anonymize a vector.}
 \usage{
-anonymize(.x, .algo = "sha256", .chars = letters, .n_chars = 5L, ...)
+anonymize(.x, .algo = "sha256", .seed = 0, .chars = letters,
+  .n_chars = 5L, ...)
 }
 \arguments{
 \item{.x}{a vector.}
 
 \item{.algo}{the name of the algorithm.}
+
+\item{.seed}{an integer to seed the random number generator.}
 
 \item{.chars}{set of characters to salt with.}
 

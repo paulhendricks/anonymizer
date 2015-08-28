@@ -4,10 +4,16 @@
 \alias{deanonymize}
 \title{Deanonymize a vector.}
 \usage{
-deanonymize(.x)
+deanonymize(.x, .algo = "sha256", .seed = 0, ...)
 }
 \arguments{
 \item{.x}{a vector.}
+
+\item{.algo}{the name of the algorithm.}
+
+\item{.seed}{an integer to seed the random number generator.}
+
+\item{...}{additional arguments to be based to \code{unhash}.}
 }
 \value{
 An deanonymized version of the vector.

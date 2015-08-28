@@ -4,10 +4,16 @@
 \alias{unhash}
 \title{Unhash a vector.}
 \usage{
-unhash(.x)
+unhash(.x, .algo = "sha256", .seed = 0, ...)
 }
 \arguments{
 \item{.x}{a vector.}
+
+\item{.algo}{the name of the algorithm.}
+
+\item{.seed}{an integer to seed the random number generator.}
+
+\item{...}{additional arguments to be based to \code{\link[digest]{digest}}.}
 }
 \value{
 An unhashed version of the vector.
