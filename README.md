@@ -42,7 +42,7 @@ letters %>% head %>% salt(.seed = 1)
 #> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
 #> [6] "gjoxffgjoxf"
 letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
-#> [1] 1
+#> [1] "a" "b" "c" "d" "e" "f"
 letters %>% head %>% hash(.algo = "crc32", .seed = 1)
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
 letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32", .seed = 1)
