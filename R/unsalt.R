@@ -24,9 +24,9 @@
 #' # Use other sets of characters to salt with
 #' unsalt(salt(letters, .chars = letters[1:2]), .chars = letters[1:2])
 #' @export
-unsalt <- function(.x, .seed = 0, .chars = letters, .n_chars = 5L){
+unsalt <- function(.x, .seed = NULL, .chars = letters, .n_chars = 5L){
   if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
-  set.seed(.seed)
+  if(!is.null(.seed)) set.seed(.seed)
   .y <- paste0(sample(.chars, .n_chars, replace = TRUE), collapse = "")
   return(gsub(.y, "", .x))
 }

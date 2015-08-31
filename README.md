@@ -38,17 +38,17 @@ library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
 letters %>% head
 #> [1] "a" "b" "c" "d" "e" "f"
-letters %>% head %>% salt
-#> [1] "xgjoxaxgjox" "xgjoxbxgjox" "xgjoxcxgjox" "xgjoxdxgjox" "xgjoxexgjox"
-#> [6] "xgjoxfxgjox"
-letters %>% head %>% salt %>% unsalt
+letters %>% head %>% salt(.seed = 1)
+#> [1] "gjoxfagjoxf" "gjoxfbgjoxf" "gjoxfcgjoxf" "gjoxfdgjoxf" "gjoxfegjoxf"
+#> [6] "gjoxffgjoxf"
+letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 #> [1] "a" "b" "c" "d" "e" "f"
 letters %>% head %>% hash(.algo = "crc32")
 #> [1] "c0749952" "597dc8e8" "2e7af87e" "b01e6ddd" "c7195d4b" "5e100cf1"
-letters %>% head %>% salt %>% hash(.algo = "crc32")
-#> [1] "9aec981b" "1c78eab5" "d7243910" "ca2109a8" "17dda0d"  "87e9a8a3"
-letters %>% head %>% anonymize(.algo = "crc32")
-#> [1] "9aec981b" "1c78eab5" "d7243910" "ca2109a8" "17dda0d"  "87e9a8a3"
+letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32")
+#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
+letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
+#> [1] "b0891ad8" "361d6876" "fd41bbd3" "e0448b6b" "2b1858ce" "ad8c2a60"
 ```
 
 ### Generate data containing fake PII

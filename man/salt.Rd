@@ -4,7 +4,7 @@
 \alias{salt}
 \title{Salt a vector.}
 \usage{
-salt(.x, .seed = 0, .chars = letters, .n_chars = 5L)
+salt(.x, .seed = NULL, .chars = letters, .n_chars = 5L)
 }
 \arguments{
 \item{.x}{a vector.}

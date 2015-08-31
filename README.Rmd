@@ -54,11 +54,11 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 library(dplyr, warn.conflicts = FALSE)
 library(anonymizer)
 letters %>% head
-letters %>% head %>% salt
-letters %>% head %>% salt %>% unsalt
+letters %>% head %>% salt(.seed = 1)
+letters %>% head %>% salt(.seed = 1) %>% unsalt(.seed = 1)
 letters %>% head %>% hash(.algo = "crc32")
-letters %>% head %>% salt %>% hash(.algo = "crc32")
-letters %>% head %>% anonymize(.algo = "crc32")
+letters %>% head %>% salt(.seed = 1) %>% hash(.algo = "crc32")
+letters %>% head %>% anonymize(.algo = "crc32", .seed = 1)
 ```
 
 ### Generate data containing fake PII

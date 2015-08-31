@@ -4,7 +4,7 @@
 \alias{unsalt}
 \title{Unsalt a vector.}
 \usage{
-unsalt(.x, .seed = 0, .chars = letters, .n_chars = 5L)
+unsalt(.x, .seed = NULL, .chars = letters, .n_chars = 5L)
 }
 \arguments{
 \item{.x}{a vector.}
