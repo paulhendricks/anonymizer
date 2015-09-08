@@ -1,3 +1,13 @@
+# anonymizer 0.2.0.9000
+
+## Improvements
+
+* Formatting documentation and typos.
+  
+## Bug fixes
+
+* None.
+
 # anonymizer 0.2.0
 
 ## Improvements
