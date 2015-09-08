@@ -11,7 +11,7 @@
 #' @param .seed an integer to seed the random number generator.
 #' @param .chars set of characters to salt with.
 #' @param .n_chars an integer; number of characters to salt with.
-#' @param ... additional arguments to be based to \code{hash}.
+#' @param ... additional arguments to be passed to \code{hash}.
 #' @return An anonymized version of the vector.
 #' @examples
 #' set.seed(1)

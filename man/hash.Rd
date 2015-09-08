@@ -13,7 +13,7 @@ hash(.x, .algo = "sha256", .seed = 0, ...)
 
 \item{.seed}{an integer to seed the random number generator.}
 
-\item{...}{additional arguments to be based to \code{\link[digest]{digest}}.}
+\item{...}{additional arguments to be passed to \code{\link[digest]{digest}}.}
 }
 \value{
 A hashed version of the vector.

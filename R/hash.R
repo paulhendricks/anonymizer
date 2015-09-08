@@ -7,7 +7,7 @@
 #' @param .x a vector.
 #' @param .algo the name of the algorithm.
 #' @param .seed an integer to seed the random number generator.
-#' @param ... additional arguments to be based to \code{\link[digest]{digest}}.
+#' @param ... additional arguments to be passed to \code{\link[digest]{digest}}.
 #' @return A hashed version of the vector.
 #' @examples
 #' # All algorithms available to digest::digest are available here

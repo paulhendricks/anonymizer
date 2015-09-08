@@ -18,7 +18,7 @@ anonymize(.x, .algo = "sha256", .seed = 0, .chars = letters,
 
 \item{.n_chars}{an integer; number of characters to salt with.}
 
-\item{...}{additional arguments to be based to \code{hash}.}
+\item{...}{additional arguments to be passed to \code{hash}.}
 }
 \value{
 An anonymized version of the vector.
