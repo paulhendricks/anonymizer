@@ -107,4 +107,4 @@ The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulh
 
 # License
 
-[MIT](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
