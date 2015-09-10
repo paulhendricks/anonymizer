@@ -111,3 +111,4 @@ The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulh
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
+
