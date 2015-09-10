@@ -9,17 +9,19 @@ anonymizer
 Installation
 ------------
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer) [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Ffunctools.svg)](http://badge.fury.io/gh/paulhendricks%2Ffunctools)
-
 You can install:
 
--   the latest released version from CRAN with
+-   the latest released version from CRAN:
+
+    [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer) [![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/anonymizer)](http://cran.rstudio.com/package=anonymizer)
 
     ``` r
     install.packages("anonymizer")
     ```
 
--   the latest development version from github with
+-   the latest development version from Github:
+
+    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Ffunctools.svg)](http://badge.fury.io/gh/paulhendricks%2Ffunctools)
 
     ``` r
     if (packageVersion("devtools") < 1.6) {
