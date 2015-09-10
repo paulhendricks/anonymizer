@@ -97,3 +97,6 @@ ashley_madison[] <- lapply(ashley_madison, anonymize, .algo = "crc32")
 ashley_madison %>% 
   knitr::kable(format = "markdown")
 ```
+
+## Author
+The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks)[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/paulhendricks/)
