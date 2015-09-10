@@ -30,16 +30,6 @@ You can install:
 
 If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/paulhendricks/anonymizer/issues).
 
-Author
-------
-
-The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
-
-License
--------
-
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
-
 API
 ---
 
@@ -129,3 +119,13 @@ ashley_madison %>%
 | a48e2b0b | 6704117d | a70d663  | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
 | 4fecaeb2 | 9d6bf732 | 1ced47c1 | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
 | abc3b85c | 90866189 | a44ae4f0 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |
+
+People
+------
+
+The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks) [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/) The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks) [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+
+License
+-------
+
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)

@@ -47,14 +47,6 @@ You can install:
 
 If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/paulhendricks/anonymizer/issues).
 
-## Author
-
-The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
-
-## License
-
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
-
 ## API
 
 `anonymzer` employs four convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
@@ -106,3 +98,12 @@ ashley_madison[] <- lapply(ashley_madison, anonymize, .algo = "crc32")
 ashley_madison %>% 
   knitr::kable(format = "markdown")
 ```
+
+## People
+
+The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks) [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks) [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+
+## License
+
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
