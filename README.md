@@ -11,13 +11,17 @@ Installation
 
 You can install:
 
--   the latest released version from CRAN [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer)
+-   the latest released version from CRAN:
+
+    [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer)
 
     ``` r
     install.packages("anonymizer")
     ```
 
--   the latest development version from Github [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fanonymizer.svg)](http://badge.fury.io/gh/paulhendricks%2Fanonymizer)
+-   the latest development version from Github:
+
+    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fanonymizer.svg)](http://badge.fury.io/gh/paulhendricks%2Fanonymizer)
 
     ``` r
     if (packageVersion("devtools") < 1.6) {
