@@ -101,9 +101,7 @@ ashley_madison %>%
 
 ## Author
 
-[![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
-
-The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks).
+The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
 
 # License
 
