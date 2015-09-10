@@ -21,7 +21,7 @@ You can install:
 
 -   the latest development version from Github:
 
-    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Ffunctools.svg)](http://badge.fury.io/gh/paulhendricks%2Ffunctools)
+    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fanonymizer.svg)](http://badge.fury.io/gh/paulhendricks%2Fanonymizer)
 
     ``` r
     if (packageVersion("devtools") < 1.6) {
