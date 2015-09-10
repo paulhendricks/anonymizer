@@ -1,3 +1,13 @@
+# anonymizer 0.2.2
+
+## Improvements
+
+* Added badges.
+  
+## Bug fixes
+
+* None.
+
 # anonymizer 0.2.1
 
 ## Improvements
