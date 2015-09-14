@@ -35,7 +35,7 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 API
 ---
 
-`anonymzer` employs four convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
+`anonymizer` employs four convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
 
 ``` r
 library(dplyr, warn.conflicts = FALSE)
@@ -77,12 +77,12 @@ knitr::kable(ashley_madison, format = "markdown")
 
 | name                  | snn         | dob        | email                    | ip              | phone      | credit\_card        |          lat|          lon|
 |:----------------------|:------------|:-----------|:-------------------------|:----------------|:-----------|:--------------------|------------:|------------:|
-| Eldridge Pfannerstill | 442-34-5338 | 1991-11-21 | <ntakqojv@lgbcyk.rkv>    | 45.84.71.225    | 6794976958 | 4125-7204-9193-5140 |   -2.7018575|     8.634988|
+| Eldridge Pfannerstill | 442-34-5338 | 1991-11-24 | <ntakqojv@lgbcyk.rkv>    | 45.84.71.225    | 6794976958 | 4125-7204-9193-5140 |   -2.7018575|     8.634988|
 | Augustine Homenick    | 799-44-6396 | 1912-06-29 | <iqg@mtcuh.viy>          | 191.116.55.106  | 3275827694 | 2182-5994-2283-9486 |  -70.4148630|   -65.827918|
-| Jennie Runte          | 941-11-5441 | 1983-09-22 | <wjszy@sjhreocvt.gbp>    | 27.128.73.17    | 7419351735 | 4370-4866-4735-7857 |  -45.4091701|   -79.932229|
-| Araceli Kunde         | 290-44-2675 | 1947-08-01 | <uljsnvhfr@qfdkumtn.jkd> | 221.47.229.86   | 3243246285 | 6682-5074-2898-9396 |   -0.2673845|   103.514583|
-| Josue Rau             | 686-88-8446 | 1994-12-20 | <c@lqxzkdpi.nfy>         | 157.136.114.185 | 9169736873 | 4510-3757-4858-5236 |  -22.8839925|    72.886505|
-| Elnora Zemlak         | 212-40-7016 | 1974-11-08 | <capvnl@nympzf.gsk>      | 143.20.199.87   | 3295843196 | 7206-6205-2194-6432 |   78.2444466|  -120.590050|
+| Jennie Runte          | 941-11-5441 | 1983-09-25 | <wjszy@sjhreocvt.gbp>    | 27.128.73.17    | 7419351735 | 4370-4866-4735-7857 |  -45.4091701|   -79.932229|
+| Araceli Kunde         | 290-44-2675 | 1947-08-02 | <uljsnvhfr@qfdkumtn.jkd> | 221.47.229.86   | 3243246285 | 6682-5074-2898-9396 |   -0.2673845|   103.514583|
+| Josue Rau             | 686-88-8446 | 1994-12-24 | <c@lqxzkdpi.nfy>         | 157.136.114.185 | 9169736873 | 4510-3757-4858-5236 |  -22.8839925|    72.886505|
+| Elnora Zemlak         | 212-40-7016 | 1974-11-10 | <capvnl@nympzf.gsk>      | 143.20.199.87   | 3295843196 | 7206-6205-2194-6432 |   78.2444466|  -120.590050|
 
 ### Detect data containing PII
 
@@ -115,12 +115,12 @@ ashley_madison %>%
 
 | name     | snn      | dob      | email    | ip       | phone    | credit\_card | lat      | lon      |
 |:---------|:---------|:---------|:---------|:---------|:---------|:-------------|:---------|:---------|
-| c83b4030 | 393d73d7 | 769fdfb1 | aa5dead  | e4b6e2c6 | d3af086b | cb7b5ba      | 80064d9e | 7dc18006 |
+| c83b4030 | 393d73d7 | 26524e02 | aa5dead  | e4b6e2c6 | d3af086b | cb7b5ba      | 80064d9e | 7dc18006 |
 | 98a6974d | 70ac65b0 | 3cf25ab6 | a75947f0 | 5e0e7cef | 5c562036 | 7cd11025     | fdf9526d | 5828b961 |
-| 77dcbc4d | 391740d7 | 95bc2323 | 6cefaee2 | fbaaa8f1 | 9a66f57d | 299a42fe     | 734886e3 | 9ea0e9a5 |
-| a48e2b0b | 6704117d | a70d663  | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
-| 4fecaeb2 | 9d6bf732 | 1ced47c1 | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
-| abc3b85c | 90866189 | a44ae4f0 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |
+| 77dcbc4d | 391740d7 | 88b9139b | 6cefaee2 | fbaaa8f1 | 9a66f57d | 299a42fe     | 734886e3 | 9ea0e9a5 |
+| a48e2b0b | 6704117d | 8ce4a4cd | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
+| 4fecaeb2 | 9d6bf732 | 877c05d7 | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
+| abc3b85c | 90866189 | ee6e6d29 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |
 
 People
 ------

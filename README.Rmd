@@ -52,7 +52,7 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
 
 ## API
 
-`anonymzer` employs four convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
+`anonymizer` employs four convenience functions: `salt`, `unsalt`, `hash`, and `anonymize`.
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE)
