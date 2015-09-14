@@ -17,6 +17,8 @@
 #' set.seed(1)
 #' anonymize(letters)
 #' @export
-anonymize <- function(.x, .algo = "sha256", .seed = 0, .chars = letters, .n_chars = 5L, ...){
-  hash(salt(.x, .seed = .seed, .chars = .chars, .n_chars = .n_chars), .algo = .algo, .seed = .seed, ...)
+anonymize <- function(.x, .algo = "sha256", .seed = 0,
+                      .chars = letters, .n_chars = 5L, ...){
+  hash(salt(.x, .seed = .seed, .chars = .chars, .n_chars = .n_chars),
+       .algo = .algo, .seed = .seed, ...)
 }

@@ -16,6 +16,7 @@
 #' hash(letters, .algo = "crc32")
 #' @export
 hash <- function(.x, .algo = "sha256", .seed = 0, ...){
-  if(!is.atomic((.x))) stop("Vector must be an atomic vector.")
-  return(unname(vapply(.x, function(object) digest::digest(object, algo = .algo, seed = .seed, ...), character(1))))
+  if (!is.atomic(.x)) stop("Vector must be an atomic vector.")
+  return(unname(vapply(.x, digest::digest, algo = .algo, seed = .seed, ...,
+                       character(1))))
 }
