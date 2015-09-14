@@ -104,9 +104,9 @@ ashley_madison %>%
 
 ## People
 
-The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+* The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
 
-The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks).  [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+* The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks).  [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
 
 ## License
 
