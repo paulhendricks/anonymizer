@@ -11,4 +11,5 @@ License: MIT + file LICENSE
 LazyData: true
 Suggests:
     digest,
-    testthat
+    testthat,
+    lintr
