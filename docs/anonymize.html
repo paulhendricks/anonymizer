@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>anonymize. anonymizer 0.2.2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">anonymizer 0.2.2</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Anonymize a vector.</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='anonymize.html'>anonymize</a></span><span class="keyword">(</span><span class="symbol">.x</span><span class="keyword">,</span> <span class="argument">.algo</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="string">"sha256"</span><span class="keyword">,</span> <span class="argument">.seed</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">0</span><span class="keyword">,</span> <span class="argument">.chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="symbol">letters</span><span class="keyword">,</span>
+  <span class="argument">.n_chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">5L</span><span class="keyword">,</span> <span class="symbol">...</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>.x</dt>
+      <dd>a vector.</dd>
+      <dt>.algo</dt>
+      <dd>the name of the algorithm.</dd>
+      <dt>.seed</dt>
+      <dd>an integer to seed the random number generator.</dd>
+      <dt>.chars</dt>
+      <dd>set of characters to salt with.</dd>
+      <dt>.n_chars</dt>
+      <dd>an integer; number of characters to salt with.</dd>
+      <dt>...</dt>
+      <dd>additional arguments to be passed to <code>hash</code>.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+An anonymized version of the vector.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p><code>anonymize</code> anonymizes a vector <code>.x</code> by first salting it with
+ <code><a href='salt.html'>salt</a></code> and then hashing it with <code><a href='hash.html'>hash</a></code>. See
+ both functions for additional documentation.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>The user is advised to check out <a href = 'https://en.wikipedia.org/wiki/Data_anonymization'>Wikipedia</a> for more information.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/Random'>set.seed</a></span><span class="keyword">(</span><span class="number">1</span><span class="keyword">)</span>
+<span class="functioncall"><a href='anonymize.html'>anonymize</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;88004902989219b709ab0b6df47b4bd5a16d77b54b100bf90cd1892f6209eb69&quot;
+ [2] &quot;18246e832ba9ebb0f66e00234ce9bd13072b2320197d5234bd2f9923ba7266c7&quot;
+ [3] &quot;7e34242b3692ea9869e59789304661f0a0b57f95c2171fd5dda957cefc174ebd&quot;
+ [4] &quot;53022e73ef8c8e6c4b9c28fe88b2f7c3dc9752614976896d26a6a5bac262696c&quot;
+ [5] &quot;47af26e7c1c28b2bd1885aaade5ea329468c9722748ead0f4ad37038aa5431d8&quot;
+ [6] &quot;ca49b69a827d7f354c02463a7a591b64400ad438a21d717389a31255844b0d9c&quot;
+ [7] &quot;e1d482341c8da0f7dcb148ff25ded4ece1e950ef23ad4f7e43c8add47710302e&quot;
+ [8] &quot;11472a257f5840e1a612b9cbcedf3925e8dbb5ef91be991eafd438203c0ac1f0&quot;
+ [9] &quot;f0d22c7f3ef30628d3c7148f6c7e778b4a828229b1ab28535693d3061f8fc656&quot;
+[10] &quot;794801e15d2796dd4662d97442c87bebd8264dde055312451d4c2b6978f786b1&quot;
+[11] &quot;c4c74732547eb74de5d6dd4ff5c7cb125d4ba94cf832c02e57822d6d3a5571c9&quot;
+[12] &quot;ea9987e5bbca0c5d709983d2fc20332b3ed55637d6a87909628b3316a3d583ff&quot;
+[13] &quot;760c7a24f910f33231a3dd5a5ae0b7c44a2047ccc7212afe5692f8582361c344&quot;
+[14] &quot;f18eba4da2043b26decc2a9009a0d46956dc6098c16028e3578a759b31359146&quot;
+[15] &quot;0d00e7489fe0bd2600b0e0bf5b02d69c651d94de68bdb18e6a063679d99c3233&quot;
+[16] &quot;5eaaf1c642f45cf2e73d4fb6975055b8d14d00f1f79450bec2e3cdc493cd65bb&quot;
+[17] &quot;9f8a4a8a6252634125028830028aba714a52d78a198dca90fd911e646595b021&quot;
+[18] &quot;ba59071827c458be24a3650e8691cdb04a9f17fa9208466cc5656e1e9e95f5e6&quot;
+[19] &quot;e6338111f03e2df2ddf416c91d321d7502cb8e64afa1a3f564cc57d31d505ffd&quot;
+[20] &quot;162599bb4d510f4e80302d05df25d223ac6e56d8d9fcdeb7ab7a0d9332f6c083&quot;
+[21] &quot;2a6273277d80c9f93c9728b0d468f28e4453d764a6cff0a2a33c2f3e8fba03d8&quot;
+[22] &quot;946027b956078f2e3a73b90342c693c055e8e780f917d8d0adf0cc57253fd7d4&quot;
+[23] &quot;4c949369d988fa516e055c100acf70138dacf1ec78a5d7a12e029ed8544e6a50&quot;
+[24] &quot;a93f41e5832362430a1b7a0d85d16b199271c3eb54672680536332351e749727&quot;
+[25] &quot;a26345dac5fa2e703e18f69fa48789876456ecca23202aebf6fdc2c6002fc30a&quot;
+[26] &quot;520ae4c73eb3de37cf4b365de2f0b59bfc6ff8ec81294edf531ebbae178394e3&quot;
+</div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>anonymize</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

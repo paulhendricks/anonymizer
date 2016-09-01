@@ -4,6 +4,7 @@ Version: 0.2.2
 Description: Allows users to quickly and easily anonymize data containing
     Personally Identifiable Information (PII) through convenience functions.
 Authors@R: person("Paul", "Hendricks", , "paul.hendricks.2013@owu.edu", c("aut", "cre"))
+UrlNote: https://github.com/paulhendricks/anonymizer
 URL: https://github.com/paulhendricks/anonymizer
 BugReports: https://github.com/paulhendricks/anonymizer/issues
 Depends: R (>= 3.1.2)

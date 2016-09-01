@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>salt. anonymizer 0.2.2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">anonymizer 0.2.2</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Salt a vector.</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">.x</span><span class="keyword">,</span> <span class="argument">.seed</span>&nbsp;<span class="argument">=</span>&nbsp;NULL<span class="keyword">,</span> <span class="argument">.chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">5L</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>.x</dt>
+      <dd>a vector.</dd>
+      <dt>.seed</dt>
+      <dd>an integer to seed the random number generator.</dd>
+      <dt>.chars</dt>
+      <dd>set of characters to salt with.</dd>
+      <dt>.n_chars</dt>
+      <dd>an integer; number of characters to salt with.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+A salted version of the vector.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p><code>salt</code> takes a vector <code>.x</code> and returns a salted version of it.
+The algorithm for salting a vector is:
+<ol>
+<li> Select a random sample of characters of length <code>.n_chars</code> from <code>.chars</code>. Call this random sample <code>.y</code>.
+  </li>
+<li> Concatenate <code>.y</code>, the vector <code>.x</code>, and <code>.y</code> again in a vectorized fashion.
+</li>
+</ol></p>
+
+      <p></p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>The user is advised to check out <a href = 'https://en.wikipedia.org/wiki/Salt_%28cryptography%29'>Wikipedia</a> for more information.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="comment"># Use various number of characters</span>
+<span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">0L</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">1L</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;gag&quot; &quot;gbg&quot; &quot;gcg&quot; &quot;gdg&quot; &quot;geg&quot; &quot;gfg&quot; &quot;ggg&quot; &quot;ghg&quot; &quot;gig&quot; &quot;gjg&quot; &quot;gkg&quot; &quot;glg&quot; &quot;gmg&quot; &quot;gng&quot; &quot;gog&quot; &quot;gpg&quot; &quot;gqg&quot; &quot;grg&quot;
+[19] &quot;gsg&quot; &quot;gtg&quot; &quot;gug&quot; &quot;gvg&quot; &quot;gwg&quot; &quot;gxg&quot; &quot;gyg&quot; &quot;gzg&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">5L</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;joxfxajoxfx&quot; &quot;joxfxbjoxfx&quot; &quot;joxfxcjoxfx&quot; &quot;joxfxdjoxfx&quot; &quot;joxfxejoxfx&quot; &quot;joxfxfjoxfx&quot; &quot;joxfxgjoxfx&quot; &quot;joxfxhjoxfx&quot;
+ [9] &quot;joxfxijoxfx&quot; &quot;joxfxjjoxfx&quot; &quot;joxfxkjoxfx&quot; &quot;joxfxljoxfx&quot; &quot;joxfxmjoxfx&quot; &quot;joxfxnjoxfx&quot; &quot;joxfxojoxfx&quot; &quot;joxfxpjoxfx&quot;
+[17] &quot;joxfxqjoxfx&quot; &quot;joxfxrjoxfx&quot; &quot;joxfxsjoxfx&quot; &quot;joxfxtjoxfx&quot; &quot;joxfxujoxfx&quot; &quot;joxfxvjoxfx&quot; &quot;joxfxwjoxfx&quot; &quot;joxfxxjoxfx&quot;
+[25] &quot;joxfxyjoxfx&quot; &quot;joxfxzjoxfx&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;yrqbfayrqbf&quot; &quot;yrqbfbyrqbf&quot; &quot;yrqbfcyrqbf&quot; &quot;yrqbfdyrqbf&quot; &quot;yrqbfeyrqbf&quot; &quot;yrqbffyrqbf&quot; &quot;yrqbfgyrqbf&quot; &quot;yrqbfhyrqbf&quot;
+ [9] &quot;yrqbfiyrqbf&quot; &quot;yrqbfjyrqbf&quot; &quot;yrqbfkyrqbf&quot; &quot;yrqbflyrqbf&quot; &quot;yrqbfmyrqbf&quot; &quot;yrqbfnyrqbf&quot; &quot;yrqbfoyrqbf&quot; &quot;yrqbfpyrqbf&quot;
+[17] &quot;yrqbfqyrqbf&quot; &quot;yrqbfryrqbf&quot; &quot;yrqbfsyrqbf&quot; &quot;yrqbftyrqbf&quot; &quot;yrqbfuyrqbf&quot; &quot;yrqbfvyrqbf&quot; &quot;yrqbfwyrqbf&quot; &quot;yrqbfxyrqbf&quot;
+[25] &quot;yrqbfyyrqbf&quot; &quot;yrqbfzyrqbf&quot;
+</div>
+<div class='input'>
+<span class="comment"># Use other sets of characters to salt with</span>
+<span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.chars</span> <span class="argument">=</span> <span class="symbol">letters</span><span class="keyword">[</span><span class="number">1</span><span class="keyword">:</span><span class="number">2</span><span class="keyword">]</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;ababaaababa&quot; &quot;abababababa&quot; &quot;ababacababa&quot; &quot;ababadababa&quot; &quot;ababaeababa&quot; &quot;ababafababa&quot; &quot;ababagababa&quot; &quot;ababahababa&quot;
+ [9] &quot;ababaiababa&quot; &quot;ababajababa&quot; &quot;ababakababa&quot; &quot;ababalababa&quot; &quot;ababamababa&quot; &quot;ababanababa&quot; &quot;ababaoababa&quot; &quot;ababapababa&quot;
+[17] &quot;ababaqababa&quot; &quot;ababarababa&quot; &quot;ababasababa&quot; &quot;ababatababa&quot; &quot;ababauababa&quot; &quot;ababavababa&quot; &quot;ababawababa&quot; &quot;ababaxababa&quot;
+[25] &quot;ababayababa&quot; &quot;ababazababa&quot;
+</div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>salt</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

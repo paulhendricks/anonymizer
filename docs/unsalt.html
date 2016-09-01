@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>unsalt. anonymizer 0.2.2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">anonymizer 0.2.2</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Unsalt a vector.</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="symbol">.x</span><span class="keyword">,</span> <span class="argument">.seed</span>&nbsp;<span class="argument">=</span>&nbsp;NULL<span class="keyword">,</span> <span class="argument">.chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">5L</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>.x</dt>
+      <dd>a vector.</dd>
+      <dt>.seed</dt>
+      <dd>an integer to seed the random number generator.</dd>
+      <dt>.chars</dt>
+      <dd>set of characters to unsalt with.</dd>
+      <dt>.n_chars</dt>
+      <dd>an integer; number of characters to unsalt with.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+An unsalted version of the vector.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p><code>salt</code> takes a vector <code>.x</code> and returns an unsalted version of it.
+The algorithm for unsalting a vector is:
+<ol>
+<li> Select a random sample of characters of length <code>.n_chars</code> from <code>.chars</code>. Call this random sample <code>.y</code>.
+  </li>
+<li> Substitute <code>.y</code> out of the vector <code>.x</code> wherever it occurs, in a vectorized fashion.
+</li>
+</ol></p>
+
+      <p></p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>The user is advised to check out <a href = 'https://en.wikipedia.org/wiki/Salt_%28cryptography%29'>Wikipedia</a> for more information.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="comment"># Use various number of characters</span>
+<span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">0L</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">1L</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;faf&quot; &quot;fbf&quot; &quot;fcf&quot; &quot;fdf&quot; &quot;fef&quot; &quot;fff&quot; &quot;fgf&quot; &quot;fhf&quot; &quot;fif&quot; &quot;fjf&quot; &quot;fkf&quot; &quot;flf&quot; &quot;fmf&quot; &quot;fnf&quot; &quot;fof&quot; &quot;fpf&quot; &quot;fqf&quot; &quot;frf&quot;
+[19] &quot;fsf&quot; &quot;ftf&quot; &quot;fuf&quot; &quot;fvf&quot; &quot;fwf&quot; &quot;fxf&quot; &quot;fyf&quot; &quot;fzf&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.n_chars</span> <span class="argument">=</span> <span class="number">5L</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;jwimpajwimp&quot; &quot;jwimpbjwimp&quot; &quot;jwimpcjwimp&quot; &quot;jwimpdjwimp&quot; &quot;jwimpejwimp&quot; &quot;jwimpfjwimp&quot; &quot;jwimpgjwimp&quot; &quot;jwimphjwimp&quot;
+ [9] &quot;jwimpijwimp&quot; &quot;jwimpjjwimp&quot; &quot;jwimpkjwimp&quot; &quot;jwimpljwimp&quot; &quot;jwimpmjwimp&quot; &quot;jwimpnjwimp&quot; &quot;jwimpojwimp&quot; &quot;jwimppjwimp&quot;
+[17] &quot;jwimpqjwimp&quot; &quot;jwimprjwimp&quot; &quot;jwimpsjwimp&quot; &quot;jwimptjwimp&quot; &quot;jwimpujwimp&quot; &quot;jwimpvjwimp&quot; &quot;jwimpwjwimp&quot; &quot;jwimpxjwimp&quot;
+[25] &quot;jwimpyjwimp&quot; &quot;jwimpzjwimp&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">)</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;cskvqacskvq&quot; &quot;cskvqbcskvq&quot; &quot;cskvqccskvq&quot; &quot;cskvqdcskvq&quot; &quot;cskvqecskvq&quot; &quot;cskvqfcskvq&quot; &quot;cskvqgcskvq&quot; &quot;cskvqhcskvq&quot;
+ [9] &quot;cskvqicskvq&quot; &quot;cskvqjcskvq&quot; &quot;cskvqkcskvq&quot; &quot;cskvqlcskvq&quot; &quot;cskvqmcskvq&quot; &quot;cskvqncskvq&quot; &quot;cskvqocskvq&quot; &quot;cskvqpcskvq&quot;
+[17] &quot;cskvqqcskvq&quot; &quot;cskvqrcskvq&quot; &quot;cskvqscskvq&quot; &quot;cskvqtcskvq&quot; &quot;cskvqucskvq&quot; &quot;cskvqvcskvq&quot; &quot;cskvqwcskvq&quot; &quot;cskvqxcskvq&quot;
+[25] &quot;cskvqycskvq&quot; &quot;cskvqzcskvq&quot;
+</div>
+<div class='input'>
+<span class="comment"># Use other sets of characters to salt with</span>
+<span class="functioncall"><a href='unsalt.html'>unsalt</a></span><span class="keyword">(</span><span class="functioncall"><a href='salt.html'>salt</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.chars</span> <span class="argument">=</span> <span class="symbol">letters</span><span class="keyword">[</span><span class="number">1</span><span class="keyword">:</span><span class="number">2</span><span class="keyword">]</span><span class="keyword">)</span><span class="keyword">,</span> <span class="argument">.chars</span> <span class="argument">=</span> <span class="symbol">letters</span><span class="keyword">[</span><span class="number">1</span><span class="keyword">:</span><span class="number">2</span><span class="keyword">]</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;abbabaabbab&quot; &quot;abbabbabbab&quot; &quot;abbabcabbab&quot; &quot;abbabdabbab&quot; &quot;abbabeabbab&quot; &quot;abbabfabbab&quot; &quot;abbabgabbab&quot; &quot;abbabhabbab&quot;
+ [9] &quot;abbabiabbab&quot; &quot;abbabjabbab&quot; &quot;abbabkabbab&quot; &quot;abbablabbab&quot; &quot;abbabmabbab&quot; &quot;abbabnabbab&quot; &quot;abbaboabbab&quot; &quot;abbabpabbab&quot;
+[17] &quot;abbabqabbab&quot; &quot;abbabrabbab&quot; &quot;abbabsabbab&quot; &quot;abbabtabbab&quot; &quot;abbabuabbab&quot; &quot;abbabvabbab&quot; &quot;abbabwabbab&quot; &quot;abbabxabbab&quot;
+[25] &quot;abbabyabbab&quot; &quot;abbabzabbab&quot;
+</div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>unsalt</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

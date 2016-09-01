@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>hash. anonymizer 0.2.2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">anonymizer 0.2.2</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Hash a vector.</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='hash.html'>hash</a></span><span class="keyword">(</span><span class="symbol">.x</span><span class="keyword">,</span> <span class="argument">.algo</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="string">"sha256"</span><span class="keyword">,</span> <span class="argument">.seed</span>&nbsp;<span class="argument">=</span>&nbsp;<span class="number">0</span><span class="keyword">,</span> <span class="symbol">...</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>.x</dt>
+      <dd>a vector.</dd>
+      <dt>.algo</dt>
+      <dd>the name of the algorithm.</dd>
+      <dt>.seed</dt>
+      <dd>an integer to seed the random number generator.</dd>
+      <dt>...</dt>
+      <dd>additional arguments to be passed to <code><a href='http://www.rdocumentation.org/packages/digest/topics/digest'>digest</a></code>.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+A hashed version of the vector.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>See <code><a href='http://www.rdocumentation.org/packages/digest/topics/digest'>digest</a></code> for additional documentation.</p>
+
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+
+      <p>The user is advised to check out <a href = 'https://en.wikipedia.org/wiki/Hash_function'>Wikipedia</a> for more information.</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="comment"># All algorithms available to digest::digest are available here</span>
+<span class="functioncall"><a href='http://www.rdocumentation.org/packages/base/topics/Random'>set.seed</a></span><span class="keyword">(</span><span class="number">1</span><span class="keyword">)</span>
+<span class="functioncall"><a href='hash.html'>hash</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.algo</span> <span class="argument">=</span> <span class="string">"sha256"</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;fb1a678ef965ad4a66c712d2161f20319091cb4e7611e1925df671018c833f72&quot;
+ [2] &quot;61ba1f136aebcd31977da80fae3afffe18b83691e2aa2c61f948d85085fd8e56&quot;
+ [3] &quot;2eea4ca3e3a6518aaffdcd5bada74dc92c3e0170ab17f7826aa1d1222f8a1ef5&quot;
+ [4] &quot;d2aebba0a3c95f6d03acf85bd9d41e602b92675ef4741063ebb2091e064d86cd&quot;
+ [5] &quot;09cab1873b8f76f0d880aa963a5bd2f7c858af261acbde2a6cdee4ce993a12b3&quot;
+ [6] &quot;6f1066d075c43d9d362b871d35b6bb0aba94407427e70d2bedb28570ba06ad47&quot;
+ [7] &quot;4b536aa57b5af5b3e1c0c2abab66b909e5595a920422d42607253631135de30a&quot;
+ [8] &quot;41d2e334d3bd3c1eaecb0012cbba4428908b0809acb68e7aa0b43cd660ddad9a&quot;
+ [9] &quot;258c9d2a5232420699ed582a1320821a85d62bb8da75d66dabf0ca9f1a1b8250&quot;
+[10] &quot;827f49bc49447ce20b1d239b4b26f0be499ee5b223f981855447c9924ad3f23e&quot;
+[11] &quot;3a4e5ba81c6becba97cf7410bf20587798c835051a1429dbcbb6a9f9be9ea840&quot;
+[12] &quot;2f1da6eb5780a0b3263be8137030a335ad81de4b6ba21427924dc9c60ffff112&quot;
+[13] &quot;2724b71e4bd92b9ce117e3edd16c42305dc2bb1895f76aa3b3b41e1cb0f6cf09&quot;
+[14] &quot;950c526e8c41fa0667808e9203924416887f65555cd7df32506f74e42beb8aa1&quot;
+[15] &quot;be83037d6ce81eb1b0a44a1d34753f6ab38722e4ee845a1ea01f553c5ab142ca&quot;
+[16] &quot;b6660aab90a66e4a74656414a9f66b7bf92b54f3a859b823fd0b718e88748017&quot;
+[17] &quot;4cb65f965cd054bb407363510cc2d807e4392d8d45617cc14edb65a2bcef1c30&quot;
+[18] &quot;79531d093ba0dcdb5d208fcd9a5eacd48eab96f22ef7f612e2cc94146040c160&quot;
+[19] &quot;c14551f4d70e521eb21f9306d0a4b32945a7803e772301ccbf0099ae5a000b50&quot;
+[20] &quot;a4081624db82db86656ac8389b2228b5aca298ef5c718fde6ea5d76283f01764&quot;
+[21] &quot;da0357333979bc690f2dee399f8aa5ce7c1909005af9aef3d4ff37bd07f2be98&quot;
+[22] &quot;195aa32a284e9807e67c0ebb71c2a3ceff320bd60c1565c32b190e5ed43c6799&quot;
+[23] &quot;bf38c35202da35e857e0f5112fa39025d200a8f1ed8d542a3cde14a79a360fcf&quot;
+[24] &quot;178ff3633d2855b22f15ec32b1d0cfc8e0a80be3d80e0361d0a89f208bb936e1&quot;
+[25] &quot;114e43f2f291daa6d777e9dbdc6a881116ef23b5b940e2cc92a422d34c77319d&quot;
+[26] &quot;76ef3457a9449f3edf38ad97e4f1d2d4471f467702fc2890cdcf524a72febb79&quot;
+</div>
+<div class='input'><span class="functioncall"><a href='hash.html'>hash</a></span><span class="keyword">(</span><span class="symbol">letters</span><span class="keyword">,</span> <span class="argument">.algo</span> <span class="argument">=</span> <span class="string">"crc32"</span><span class="keyword">)</span></div>
+<div class='output'> [1] &quot;c0749952&quot; &quot;597dc8e8&quot; &quot;2e7af87e&quot; &quot;b01e6ddd&quot; &quot;c7195d4b&quot; &quot;5e100cf1&quot; &quot;29173c67&quot; &quot;b9a821f6&quot; &quot;ceaf1160&quot; &quot;57a640da&quot;
+[11] &quot;20a1704c&quot; &quot;bec5e5ef&quot; &quot;c9c2d579&quot; &quot;50cb84c3&quot; &quot;27ccb455&quot; &quot;aac4b9a0&quot; &quot;ddc38936&quot; &quot;44cad88c&quot; &quot;33cde81a&quot; &quot;ada97db9&quot;
+[21] &quot;daae4d2f&quot; &quot;43a71c95&quot; &quot;34a02c03&quot; &quot;a41f3192&quot; &quot;d3180104&quot; &quot;4a1150be&quot;
+</div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>hash</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>
