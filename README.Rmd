@@ -1,7 +1,6 @@
 ---
 output:
-  md_document:
-    variant: markdown_github
+  github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -27,28 +26,22 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install:
+You can install the latest development version from CRAN:
 
-* the latest released version from CRAN: 
+```R
+install.packages("anonymizer")
+````
 
-    [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer)
+Or from GitHub with:
 
-    ```R
-    install.packages("anonymizer")
-    ````
+```R
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("paulhendricks/anonymizer")
+```
 
-* the latest development version from Github: 
-
-    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fanonymizer.svg)](http://badge.fury.io/gh/paulhendricks%2Fanonymizer)
-
-    ```R
-    if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
-    }
-    devtools::install_github("paulhendricks/anonymizer")
-    ```
-
-If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/paulhendricks/anonymizer/issues).
+If you encounter a clear bug, please file a [minimal reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example) on [GitHub](https://github.com/paulhendricks/anonymizer/issues).
 
 ## API
 
@@ -102,13 +95,21 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-## People
+## Citation
 
-* The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+To cite package ‘anonymizer’ in publications use:
 
-* The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks).  [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+```
+Paul Hendricks (NA). anonymizer: Anonymize Data Containing Personally Identifiable Information. R package version 0.2.2. https://github.com/paulhendricks/anonymizer
+```
 
-## License
+A BibTeX entry for LaTeX users is
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
-
+```
+@Manual{,
+  title = {anonymizer: Anonymize Data Containing Personally Identifiable Information},
+  author = {Paul Hendricks},
+  note = {R package version 0.2.2},
+  url = {https://github.com/paulhendricks/anonymizer},
+}
+```

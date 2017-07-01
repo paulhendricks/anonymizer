@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 anonymizer
 ==========
@@ -9,28 +10,22 @@ anonymizer
 Installation
 ------------
 
-You can install:
+You can install the latest development version from CRAN:
 
--   the latest released version from CRAN:
+``` r
+install.packages("anonymizer")
+```
 
-    [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/anonymizer)](http://cran.r-project.org/package=anonymizer)
+Or from GitHub with:
 
-    ``` r
-    install.packages("anonymizer")
-    ```
+``` r
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("paulhendricks/anonymizer")
+```
 
--   the latest development version from Github:
-
-    [![GitHub version](https://badge.fury.io/gh/paulhendricks%2Fanonymizer.svg)](http://badge.fury.io/gh/paulhendricks%2Fanonymizer)
-
-    ``` r
-    if (packageVersion("devtools") < 1.6) {
-      install.packages("devtools")
-    }
-    devtools::install_github("paulhendricks/anonymizer")
-    ```
-
-If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/paulhendricks/anonymizer/issues).
+If you encounter a clear bug, please file a [minimal reproducible example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example) on [GitHub](https://github.com/paulhendricks/anonymizer/issues).
 
 API
 ---
@@ -75,14 +70,100 @@ ashley_madison <-
 knitr::kable(ashley_madison, format = "markdown")
 ```
 
-| name                  | snn         | dob        | email                    | ip              | phone      | credit\_card        |          lat|          lon|
-|:----------------------|:------------|:-----------|:-------------------------|:----------------|:-----------|:--------------------|------------:|------------:|
-| Eldridge Pfannerstill | 442-34-5338 | 1991-11-24 | <ntakqojv@lgbcyk.rkv>    | 45.84.71.225    | 6794976958 | 4125-7204-9193-5140 |   -2.7018575|     8.634988|
-| Augustine Homenick    | 799-44-6396 | 1912-06-29 | <iqg@mtcuh.viy>          | 191.116.55.106  | 3275827694 | 2182-5994-2283-9486 |  -70.4148630|   -65.827918|
-| Jennie Runte          | 941-11-5441 | 1983-09-25 | <wjszy@sjhreocvt.gbp>    | 27.128.73.17    | 7419351735 | 4370-4866-4735-7857 |  -45.4091701|   -79.932229|
-| Araceli Kunde         | 290-44-2675 | 1947-08-02 | <uljsnvhfr@qfdkumtn.jkd> | 221.47.229.86   | 3243246285 | 6682-5074-2898-9396 |   -0.2673845|   103.514583|
-| Josue Rau             | 686-88-8446 | 1994-12-24 | <c@lqxzkdpi.nfy>         | 157.136.114.185 | 9169736873 | 4510-3757-4858-5236 |  -22.8839925|    72.886505|
-| Elnora Zemlak         | 212-40-7016 | 1974-11-10 | <capvnl@nympzf.gsk>      | 143.20.199.87   | 3295843196 | 7206-6205-2194-6432 |   78.2444466|  -120.590050|
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="8%" />
+<col width="16%" />
+<col width="11%" />
+<col width="8%" />
+<col width="14%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">snn</th>
+<th align="left">dob</th>
+<th align="left">email</th>
+<th align="left">ip</th>
+<th align="left">phone</th>
+<th align="left">credit_card</th>
+<th align="right">lat</th>
+<th align="right">lon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Eldridge Pfannerstill</td>
+<td align="left">442-34-5338</td>
+<td align="left">1993-04-28</td>
+<td align="left"><a href="mailto:ntakqojv@lgbcyk.rkv">ntakqojv@lgbcyk.rkv</a></td>
+<td align="left">45.84.71.225</td>
+<td align="left">6794976958</td>
+<td align="left">4125-7204-9193-5140</td>
+<td align="right">-2.7018575</td>
+<td align="right">8.634988</td>
+</tr>
+<tr class="even">
+<td align="left">Augustine Homenick</td>
+<td align="left">799-44-6396</td>
+<td align="left">1912-09-08</td>
+<td align="left"><a href="mailto:iqg@mtcuh.viy">iqg@mtcuh.viy</a></td>
+<td align="left">191.116.55.106</td>
+<td align="left">3275827694</td>
+<td align="left">2182-5994-2283-9486</td>
+<td align="right">-70.4148630</td>
+<td align="right">-65.827918</td>
+</tr>
+<tr class="odd">
+<td align="left">Jennie Runte</td>
+<td align="left">941-11-5441</td>
+<td align="left">1985-01-12</td>
+<td align="left"><a href="mailto:wjszy@sjhreocvt.gbp">wjszy@sjhreocvt.gbp</a></td>
+<td align="left">27.128.73.17</td>
+<td align="left">7419351735</td>
+<td align="left">4370-4866-4735-7857</td>
+<td align="right">-45.4091701</td>
+<td align="right">-79.932229</td>
+</tr>
+<tr class="even">
+<td align="left">Araceli Kunde</td>
+<td align="left">290-44-2675</td>
+<td align="left">1948-04-28</td>
+<td align="left"><a href="mailto:uljsnvhfr@qfdkumtn.jkd">uljsnvhfr@qfdkumtn.jkd</a></td>
+<td align="left">221.47.229.86</td>
+<td align="left">3243246285</td>
+<td align="left">6682-5074-2898-9396</td>
+<td align="right">-0.2673845</td>
+<td align="right">103.514583</td>
+</tr>
+<tr class="odd">
+<td align="left">Josue Rau</td>
+<td align="left">686-88-8446</td>
+<td align="left">1996-06-14</td>
+<td align="left"><a href="mailto:c@lqxzkdpi.nfy">c@lqxzkdpi.nfy</a></td>
+<td align="left">157.136.114.185</td>
+<td align="left">9169736873</td>
+<td align="left">4510-3757-4858-5236</td>
+<td align="right">-22.8839925</td>
+<td align="right">72.886505</td>
+</tr>
+<tr class="even">
+<td align="left">Elnora Zemlak</td>
+<td align="left">212-40-7016</td>
+<td align="left">1976-01-09</td>
+<td align="left"><a href="mailto:capvnl@nympzf.gsk">capvnl@nympzf.gsk</a></td>
+<td align="left">143.20.199.87</td>
+<td align="left">3295843196</td>
+<td align="left">7206-6205-2194-6432</td>
+<td align="right">78.2444466</td>
+<td align="right">-120.590050</td>
+</tr>
+</tbody>
+</table>
 
 ### Detect data containing PII
 
@@ -93,17 +174,78 @@ ashley_madison %>%
   knitr::kable(format = "markdown")
 ```
 
-| column\_name | has\_email\_addresses | has\_phone\_numbers | has\_national\_identification\_numbers |
-|:-------------|:----------------------|:--------------------|:---------------------------------------|
-| name         | FALSE                 | FALSE               | FALSE                                  |
-| snn          | FALSE                 | FALSE               | TRUE                                   |
-| dob          | FALSE                 | FALSE               | FALSE                                  |
-| email        | TRUE                  | FALSE               | FALSE                                  |
-| ip           | FALSE                 | FALSE               | FALSE                                  |
-| phone        | FALSE                 | TRUE                | FALSE                                  |
-| credit\_card | FALSE                 | FALSE               | FALSE                                  |
-| lat          | FALSE                 | TRUE                | FALSE                                  |
-| lon          | FALSE                 | TRUE                | FALSE                                  |
+<table>
+<colgroup>
+<col width="14%" />
+<col width="23%" />
+<col width="21%" />
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">column_name</th>
+<th align="left">has_email_addresses</th>
+<th align="left">has_phone_numbers</th>
+<th align="left">has_national_identification_numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">name</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">snn</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="odd">
+<td align="left">dob</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">email</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">ip</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">phone</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">credit_card</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">lat</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">lon</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+</tr>
+</tbody>
+</table>
 
 ### Anonymize data containing PII
 
@@ -115,21 +257,25 @@ ashley_madison %>%
 
 | name     | snn      | dob      | email    | ip       | phone    | credit\_card | lat      | lon      |
 |:---------|:---------|:---------|:---------|:---------|:---------|:-------------|:---------|:---------|
-| c83b4030 | 393d73d7 | 26524e02 | aa5dead  | e4b6e2c6 | d3af086b | cb7b5ba      | 80064d9e | 7dc18006 |
-| 98a6974d | 70ac65b0 | 3cf25ab6 | a75947f0 | 5e0e7cef | 5c562036 | 7cd11025     | fdf9526d | 5828b961 |
-| 77dcbc4d | 391740d7 | 88b9139b | 6cefaee2 | fbaaa8f1 | 9a66f57d | 299a42fe     | 734886e3 | 9ea0e9a5 |
-| a48e2b0b | 6704117d | 8ce4a4cd | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
-| 4fecaeb2 | 9d6bf732 | 877c05d7 | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
-| abc3b85c | 90866189 | ee6e6d29 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |
+| c83b4030 | 393d73d7 | 18fe3e97 | aa5dead  | e4b6e2c6 | d3af086b | cb7b5ba      | 80064d9e | 7dc18006 |
+| 98a6974d | 70ac65b0 | bf8857eb | a75947f0 | 5e0e7cef | 5c562036 | 7cd11025     | fdf9526d | 5828b961 |
+| 77dcbc4d | 391740d7 | f0b13e46 | 6cefaee2 | fbaaa8f1 | 9a66f57d | 299a42fe     | 734886e3 | 9ea0e9a5 |
+| a48e2b0b | 6704117d | 2e40fae7 | e1598468 | b7a422ba | 1f0a0373 | f420590f     | 53155b41 | 81018fc  |
+| 4fecaeb2 | 9d6bf732 | e881bbe7 | 4b412ff9 | d1f2740c | ac553e93 | e3716031     | f3d9a005 | ef3bdb8d |
+| abc3b85c | 90866189 | 6cefc2f4 | f26e84b1 | 52596e0e | b14fa5df | 9189fc4f     | 85c69f65 | f0db3bb0 |
 
-People
-------
+Citation
+--------
 
--   The original author of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+To cite package ‘anonymizer’ in publications use:
 
--   The lead maintainer of `anonymizer` is [Paul Hendricks](https://github.com/paulhendricks). [![Gratipay](https://img.shields.io/gratipay/JSFiddle.svg)](https://gratipay.com/~paulhendricks/)
+    Paul Hendricks (NA). anonymizer: Anonymize Data Containing Personally Identifiable Information. R package version 0.2.2. https://github.com/paulhendricks/anonymizer
 
-License
--------
+A BibTeX entry for LaTeX users is
 
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/paulhendricks/anonymizer/blob/master/LICENSE)
+    @Manual{,
+      title = {anonymizer: Anonymize Data Containing Personally Identifiable Information},
+      author = {Paul Hendricks},
+      note = {R package version 0.2.2},
+      url = {https://github.com/paulhendricks/anonymizer},
+    }
