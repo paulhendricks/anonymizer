@@ -269,13 +269,14 @@ Citation
 
 To cite package ‘anonymizer’ in publications use:
 
-    Paul Hendricks (NA). anonymizer: Anonymize Data Containing Personally Identifiable Information. R package version 0.2.2. https://github.com/paulhendricks/anonymizer
+    Paul Hendricks (2015). anonymizer: Anonymize Data Containing Personally Identifiable Information. R package version 0.2.0. https://github.com/paulhendricks/anonymizer
 
 A BibTeX entry for LaTeX users is
 
     @Manual{,
       title = {anonymizer: Anonymize Data Containing Personally Identifiable Information},
       author = {Paul Hendricks},
-      note = {R package version 0.2.2},
+      year= {2015}, 
+      note = {R package version 0.2.0},
       url = {https://github.com/paulhendricks/anonymizer},
     }
